@@ -34,5 +34,25 @@ namespace kenneth_SistemJualBeli
                 MessageBox.Show("Penyimpanan gagal. Pesan kesalahan: " + ex.Message, "Kesalahan");
             }
         }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            FormDaftarKategori formDaftarKategori = (FormDaftarKategori)this.Owner;
+            formDaftarKategori.FormDaftarKategori_Load(buttonKeluar, e);
+            this.Close();
+        }
+
+        private void FormTambahKategori_Load(object sender, EventArgs e)
+        {
+            string kodeBaru = Kategori.GenerateKode();
+
+            textBoxKodeKategori.Text = kodeBaru;
+            textBoxNamaKategori.Focus();
+        }
+
+        private void textBoxKodeKategori_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

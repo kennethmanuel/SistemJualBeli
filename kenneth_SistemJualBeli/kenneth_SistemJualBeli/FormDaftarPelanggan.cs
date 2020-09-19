@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kenneth_ClassJualBeli;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,6 +13,7 @@ namespace kenneth_SistemJualBeli
 {
     public partial class FormDaftarPelanggan : Form
     {
+        List<Pelanggan> listPelanggan = new List<Pelanggan>();
         public FormDaftarPelanggan()
         {
             InitializeComponent();
@@ -36,6 +38,49 @@ namespace kenneth_SistemJualBeli
             FormHapusPelanggan formHapusPelanggan = new FormHapusPelanggan();
             formHapusPelanggan.Owner = this;
             formHapusPelanggan.Show();
+        }
+
+        public void FormDaftarPelanggan_Load(object sender, EventArgs e)
+        {
+            listPelanggan = Pelanggan.BacaData("", "");
+
+            if (listPelanggan.Count > 0)
+            {
+                dataGridViewPelanggan.DataSource = listPelanggan;
+            }
+            else
+            {
+                dataGridViewPelanggan.DataSource = null;
+            }
+        }
+
+        private void textBoxCari_TextChanged(object sender, EventArgs e)
+        {
+            if (comboBoxCari.Text == "Kode Pelanggan")
+            {
+                listPelanggan = Pelanggan.BacaData("kodepelanggan", textBoxCari.Text);
+            }
+            else if (comboBoxCari.Text == "Nama")
+            {
+                listPelanggan = Pelanggan.BacaData("nama", textBoxCari.Text);
+            }
+            else if(comboBoxCari.Text == "Alamat")
+            {
+                listPelanggan = Pelanggan.BacaData("alamat", textBoxCari.Text);
+            }
+            else if(comboBoxCari.Text == "Telepon")
+            {
+                listPelanggan = Pelanggan.BacaData("telepon", textBoxCari.Text);
+            }
+
+            if (listPelanggan.Count > 0)
+            {
+                dataGridViewPelanggan.DataSource = listPelanggan;
+            }
+            else
+            {
+                dataGridViewPelanggan.DataSource = null;
+            }
         }
     }
 }

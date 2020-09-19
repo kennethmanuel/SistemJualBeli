@@ -33,5 +33,19 @@ namespace kenneth_SistemJualBeli
                 MessageBox.Show("Penyimpanan gagal. Pesan kesalahan: " + ex.Message, "Kesalahan");
             }
         }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            FormDaftarSupplier formDaftarSupplier = (FormDaftarSupplier)this.Owner;
+            formDaftarSupplier.FormDaftarSupplier_Load(buttonKeluar, e);
+            this.Close();
+        }
+
+        private void FormTambahSupplier_Load(object sender, EventArgs e)
+        {
+            int kodeBaru = Supplier.GenerateCode();
+
+            textBoxKode.Text = kodeBaru.ToString();
+        }
     }
 }

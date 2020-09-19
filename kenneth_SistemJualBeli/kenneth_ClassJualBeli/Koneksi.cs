@@ -82,6 +82,17 @@ namespace kenneth_ClassJualBeli
 
             c.ExecuteNonQuery();
         }
+
+        public static MySqlDataReader JalankanPerintahQuery(string sql)
+        {
+            Koneksi k = new Koneksi();
+
+            MySqlCommand c = new MySqlCommand(sql, k.KoneksiDB);
+
+            MySqlDataReader hasil = c.ExecuteReader();
+
+            return hasil;
+        }
         #endregion
 
     }

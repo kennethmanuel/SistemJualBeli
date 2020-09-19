@@ -37,9 +37,9 @@
             this.buttonHapus = new System.Windows.Forms.Button();
             this.buttonUbah = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPelanggan = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPelanggan)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,6 +60,7 @@
             this.textBoxCari.Name = "textBoxCari";
             this.textBoxCari.Size = new System.Drawing.Size(349, 32);
             this.textBoxCari.TabIndex = 2;
+            this.textBoxCari.TextChanged += new System.EventHandler(this.textBoxCari_TextChanged);
             // 
             // comboBoxCari
             // 
@@ -149,15 +150,15 @@
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
-            // dataGridView1
+            // dataGridViewPelanggan
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 201);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(860, 239);
-            this.dataGridView1.TabIndex = 16;
+            this.dataGridViewPelanggan.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPelanggan.Location = new System.Drawing.Point(18, 201);
+            this.dataGridViewPelanggan.Name = "dataGridViewPelanggan";
+            this.dataGridViewPelanggan.RowHeadersWidth = 51;
+            this.dataGridViewPelanggan.RowTemplate.Height = 24;
+            this.dataGridViewPelanggan.Size = new System.Drawing.Size(860, 239);
+            this.dataGridViewPelanggan.TabIndex = 16;
             // 
             // FormDaftarPelanggan
             // 
@@ -171,12 +172,13 @@
             this.Controls.Add(this.buttonHapus);
             this.Controls.Add(this.buttonUbah);
             this.Controls.Add(this.buttonTambah);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewPelanggan);
             this.Name = "FormDaftarPelanggan";
             this.Text = "FormDaftarPelanggan";
+            this.Load += new System.EventHandler(this.FormDaftarPelanggan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPelanggan)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -192,6 +194,6 @@
         private System.Windows.Forms.Button buttonHapus;
         private System.Windows.Forms.Button buttonUbah;
         private System.Windows.Forms.Button buttonTambah;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewPelanggan;
     }
 }

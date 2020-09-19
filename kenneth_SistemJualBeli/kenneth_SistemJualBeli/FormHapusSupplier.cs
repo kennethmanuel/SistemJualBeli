@@ -13,6 +13,7 @@ namespace kenneth_SistemJualBeli
 {
     public partial class FormHapusSupplier : Form
     {
+        List<Supplier> listSupplier = new List<Supplier>();
         public FormHapusSupplier()
         {
             InitializeComponent();
@@ -38,6 +39,29 @@ namespace kenneth_SistemJualBeli
                 }
 
             }
+        }
+
+        private void textBoxKode_TextChanged(object sender, EventArgs e)
+        {
+            listSupplier = Supplier.BacaData("kodesupplier", textBoxKode.Text);
+
+            if (listSupplier.Count > 0)
+            {
+                textBoxNama.Text = listSupplier[0].Nama;
+                textBoxAlamat.Text = listSupplier[0].Alamat;
+            }
+            else
+            {
+                MessageBox.Show("Kode supplier tidak ditemukan.", "Kesalahan");
+                textBoxKode.Text = "";
+            }
+        }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            FormDaftarSupplier formDaftarSupplier = (FormDaftarSupplier)this.Owner;
+            formDaftarSupplier.FormDaftarSupplier_Load(buttonKeluar, e);
+            this.Close();
         }
     }
 }

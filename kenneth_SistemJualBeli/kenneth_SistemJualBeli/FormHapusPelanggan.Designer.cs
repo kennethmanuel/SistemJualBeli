@@ -62,6 +62,7 @@
             // 
             // textBoxTelepon
             // 
+            this.textBoxTelepon.Enabled = false;
             this.textBoxTelepon.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxTelepon.Location = new System.Drawing.Point(189, 195);
             this.textBoxTelepon.Name = "textBoxTelepon";
@@ -80,6 +81,7 @@
             // 
             // textBoxAlamat
             // 
+            this.textBoxAlamat.Enabled = false;
             this.textBoxAlamat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAlamat.Location = new System.Drawing.Point(189, 139);
             this.textBoxAlamat.Name = "textBoxAlamat";
@@ -98,7 +100,9 @@
             // 
             // textBoxNama
             // 
+            this.textBoxNama.Enabled = false;
             this.textBoxNama.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNama.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.textBoxNama.Location = new System.Drawing.Point(189, 84);
             this.textBoxNama.Name = "textBoxNama";
             this.textBoxNama.Size = new System.Drawing.Size(282, 32);
@@ -121,6 +125,7 @@
             this.textBoxKode.Name = "textBoxKode";
             this.textBoxKode.Size = new System.Drawing.Size(108, 32);
             this.textBoxKode.TabIndex = 2;
+            this.textBoxKode.TextChanged += new System.EventHandler(this.textBoxKode_TextChanged);
             // 
             // label2
             // 
@@ -155,6 +160,7 @@
             this.buttonKeluar.TabIndex = 38;
             this.buttonKeluar.Text = "KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
             // buttonKosongi
             // 

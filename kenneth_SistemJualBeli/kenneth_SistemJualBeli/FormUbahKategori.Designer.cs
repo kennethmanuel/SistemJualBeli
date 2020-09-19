@@ -77,6 +77,7 @@
             this.textBoxKodeKategori.Name = "textBoxKodeKategori";
             this.textBoxKodeKategori.Size = new System.Drawing.Size(108, 32);
             this.textBoxKodeKategori.TabIndex = 2;
+            this.textBoxKodeKategori.TextChanged += new System.EventHandler(this.textBoxKodeKategori_TextChanged);
             // 
             // label2
             // 
@@ -111,6 +112,7 @@
             this.buttonKeluar.TabIndex = 33;
             this.buttonKeluar.Text = "KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
             // buttonKosongi
             // 
@@ -150,6 +152,7 @@
             this.Controls.Add(this.buttonUbah);
             this.Name = "FormUbahKategori";
             this.Text = "FormUbahKategori";
+            this.Load += new System.EventHandler(this.FormUbahKategori_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

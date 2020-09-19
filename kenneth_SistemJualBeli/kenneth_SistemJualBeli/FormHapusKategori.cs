@@ -13,6 +13,7 @@ namespace kenneth_SistemJualBeli
 {
     public partial class FormHapusKategori : Form
     {
+        List<Kategori> listKategori = new List<Kategori>();
         public FormHapusKategori()
         {
             InitializeComponent();
@@ -43,6 +44,31 @@ namespace kenneth_SistemJualBeli
         private void buttonKosongi_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void textBoxKodeKategori_TextChanged(object sender, EventArgs e)
+        {
+            if (textBoxKodeKategori.Text.Length == textBoxKodeKategori.MaxLength)
+            {
+                listKategori = Kategori.BacaData("KodeKategori", textBoxKodeKategori.Text);
+
+                if (listKategori.Count > 0)
+                {
+                    textBoxNamaKategori.Text = listKategori[0].Nama;
+                }
+                else
+                {
+                    MessageBox.Show("Kode kategori tidak ditemukan.", "Kesalahan");
+                    textBoxKodeKategori.Text = "";
+                }
+            }
+        }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            FormDaftarKategori formDaftarKategori = (FormDaftarKategori)this.Owner;
+            formDaftarKategori.FormDaftarKategori_Load(buttonKeluar, e);
+            this.Close();
         }
     }
 }

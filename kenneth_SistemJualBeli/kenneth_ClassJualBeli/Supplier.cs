@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using MySql.Data.MySqlClient;
 
 namespace kenneth_ClassJualBeli
 {
@@ -48,6 +49,46 @@ namespace kenneth_ClassJualBeli
             Koneksi.JalankanPerintahDML(sql);
         }
 
+        public static List<Supplier> BacaData(string kriteria, string nilaiKriteria)
+        {
+            string sql = "";
+
+            if (kriteria == "")
+            {
+                sql = "SELECT * FROM supplier";
+            }
+            else
+            {
+                sql = "SELECT * FROM supplier WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+            }
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<Supplier> listSupplier = new List<Supplier>();
+
+            while (hasil.Read() == true)
+            {
+                Supplier s = new Supplier(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(), hasil.GetValue(2).ToString()); 
+
+                listSupplier.Add(s);
+            }
+
+            return listSupplier;
+        }
+        public static int GenerateCode()
+        {
+            string sql = "SELECT MAX(kodesupplier) FROM supplier";
+
+            int hasilKode = 1;
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                hasilKode = int.Parse(hasil.GetValue(0).ToString()) + 1;
+            }
+
+            return hasilKode;
+        }
         #endregion
     }
 }

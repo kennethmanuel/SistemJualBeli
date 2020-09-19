@@ -13,6 +13,7 @@ namespace kenneth_SistemJualBeli
 {
     public partial class FormHapusPelanggan : Form
     {
+        List<Pelanggan> listPelanggan = new List<Pelanggan>();
         public FormHapusPelanggan()
         {
             InitializeComponent();
@@ -38,6 +39,30 @@ namespace kenneth_SistemJualBeli
                 }
 
             }
+        }
+
+        private void textBoxKode_TextChanged(object sender, EventArgs e)
+        {
+            listPelanggan = Pelanggan.BacaData("kodepelanggan", textBoxKode.Text);
+
+            if (listPelanggan.Count > 0)
+            {
+                textBoxNama.Text = listPelanggan[0].Nama;
+                textBoxAlamat.Text = listPelanggan[0].Alamat;
+                textBoxTelepon.Text = listPelanggan[0].Telepon;
+            }
+            else
+            {
+                MessageBox.Show("Kode pelanggan tidak ditemukan.", "Kesalahan");
+                textBoxKode.Text = "";
+            }
+        }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            FormDaftarPelanggan formDaftarPelanggan = (FormDaftarPelanggan)this.Owner;
+            formDaftarPelanggan.FormDaftarPelanggan_Load(buttonKeluar, e);
+            this.Close();
         }
     }
 }

@@ -35,7 +35,7 @@
             this.textBoxKodeKategori = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonKeluar = new System.Windows.Forms.Button();
-            this.buttonUbah = new System.Windows.Forms.Button();
+            this.buttonKosongi = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -84,11 +84,14 @@
             // 
             // textBoxKodeKategori
             // 
+            this.textBoxKodeKategori.Enabled = false;
             this.textBoxKodeKategori.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxKodeKategori.Location = new System.Drawing.Point(215, 33);
             this.textBoxKodeKategori.Name = "textBoxKodeKategori";
             this.textBoxKodeKategori.Size = new System.Drawing.Size(108, 32);
             this.textBoxKodeKategori.TabIndex = 2;
+            this.textBoxKodeKategori.TabStop = false;
+            this.textBoxKodeKategori.TextChanged += new System.EventHandler(this.textBoxKodeKategori_TextChanged);
             // 
             // label2
             // 
@@ -111,18 +114,19 @@
             this.buttonKeluar.TabIndex = 23;
             this.buttonKeluar.Text = "KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
-            // buttonUbah
+            // buttonKosongi
             // 
-            this.buttonUbah.BackColor = System.Drawing.Color.Navy;
-            this.buttonUbah.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.buttonUbah.ForeColor = System.Drawing.Color.White;
-            this.buttonUbah.Location = new System.Drawing.Point(307, 258);
-            this.buttonUbah.Name = "buttonUbah";
-            this.buttonUbah.Size = new System.Drawing.Size(133, 55);
-            this.buttonUbah.TabIndex = 22;
-            this.buttonUbah.Text = "KOSONGI ";
-            this.buttonUbah.UseVisualStyleBackColor = false;
+            this.buttonKosongi.BackColor = System.Drawing.Color.Navy;
+            this.buttonKosongi.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonKosongi.ForeColor = System.Drawing.Color.White;
+            this.buttonKosongi.Location = new System.Drawing.Point(307, 258);
+            this.buttonKosongi.Name = "buttonKosongi";
+            this.buttonKosongi.Size = new System.Drawing.Size(133, 55);
+            this.buttonKosongi.TabIndex = 22;
+            this.buttonKosongi.Text = "KOSONGI ";
+            this.buttonKosongi.UseVisualStyleBackColor = false;
             // 
             // buttonTambah
             // 
@@ -133,7 +137,7 @@
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(133, 55);
             this.buttonTambah.TabIndex = 21;
-            this.buttonTambah.Text = "SIMPAN ";
+            this.buttonTambah.Text = "TAMBAH";
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
@@ -144,12 +148,13 @@
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(685, 325);
             this.Controls.Add(this.buttonKeluar);
-            this.Controls.Add(this.buttonUbah);
+            this.Controls.Add(this.buttonKosongi);
             this.Controls.Add(this.buttonTambah);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Name = "FormTambahKategori";
             this.Text = "FormTambahKategori";
+            this.Load += new System.EventHandler(this.FormTambahKategori_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -165,7 +170,7 @@
         private System.Windows.Forms.TextBox textBoxKodeKategori;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonKeluar;
-        private System.Windows.Forms.Button buttonUbah;
+        private System.Windows.Forms.Button buttonKosongi;
         private System.Windows.Forms.Button buttonTambah;
     }
 }

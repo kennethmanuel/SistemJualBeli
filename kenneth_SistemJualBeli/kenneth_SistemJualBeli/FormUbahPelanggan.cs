@@ -13,6 +13,7 @@ namespace kenneth_SistemJualBeli
 {
     public partial class FormUbahPelanggan : Form
     {
+        List<Pelanggan> listPelanggan = new List<Pelanggan>();
         public FormUbahPelanggan()
         {
             InitializeComponent();
@@ -32,6 +33,35 @@ namespace kenneth_SistemJualBeli
             {
                 MessageBox.Show("Perubahan gagal. Pesan kesalahan: " + ex.Message);
             }
+        }
+
+        private void FormUbahPelanggan_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void textBoxKode_TextChanged(object sender, EventArgs e)
+        {
+            listPelanggan = Pelanggan.BacaData("kodepelanggan", textBoxKode.Text);
+
+            if (listPelanggan.Count > 0)
+            {
+                textBoxNama.Text = listPelanggan[0].Nama;
+                textBoxAlamat.Text = listPelanggan[0].Alamat;
+                textBoxTelepon.Text = listPelanggan[0].Telepon;
+            }
+            else
+            {
+                MessageBox.Show("Kode pelanggan tidak ditemukan.", "Kesalahan");
+                textBoxKode.Text = "";
+            }
+        }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            FormDaftarPelanggan formDaftarPelanggan = (FormDaftarPelanggan)this.Owner;
+            formDaftarPelanggan.FormDaftarPelanggan_Load(buttonKeluar, e);
+            this.Close();
         }
     }
 }

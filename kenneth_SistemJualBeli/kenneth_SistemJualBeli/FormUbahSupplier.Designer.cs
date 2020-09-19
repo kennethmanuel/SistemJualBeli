@@ -99,6 +99,7 @@
             this.textBoxKode.Name = "textBoxKode";
             this.textBoxKode.Size = new System.Drawing.Size(108, 32);
             this.textBoxKode.TabIndex = 2;
+            this.textBoxKode.TextChanged += new System.EventHandler(this.textBoxKode_TextChanged);
             // 
             // label2
             // 
@@ -133,6 +134,7 @@
             this.buttonKeluar.TabIndex = 38;
             this.buttonKeluar.Text = "KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
             // buttonKosongi
             // 

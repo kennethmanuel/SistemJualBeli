@@ -58,6 +58,7 @@
             // 
             // textBoxAlamat
             // 
+            this.textBoxAlamat.Enabled = false;
             this.textBoxAlamat.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxAlamat.Location = new System.Drawing.Point(189, 139);
             this.textBoxAlamat.Name = "textBoxAlamat";
@@ -76,6 +77,7 @@
             // 
             // textBoxNama
             // 
+            this.textBoxNama.Enabled = false;
             this.textBoxNama.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNama.Location = new System.Drawing.Point(189, 84);
             this.textBoxNama.Name = "textBoxNama";
@@ -99,6 +101,7 @@
             this.textBoxKode.Name = "textBoxKode";
             this.textBoxKode.Size = new System.Drawing.Size(108, 32);
             this.textBoxKode.TabIndex = 2;
+            this.textBoxKode.TextChanged += new System.EventHandler(this.textBoxKode_TextChanged);
             // 
             // label2
             // 
@@ -119,7 +122,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(647, 60);
             this.label1.TabIndex = 34;
-            this.label1.Text = "TAMBAH SUPPLIER";
+            this.label1.Text = "HAPUS SUPPLIER";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonKeluar
@@ -133,6 +136,7 @@
             this.buttonKeluar.TabIndex = 38;
             this.buttonKeluar.Text = "KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
             // buttonKosongi
             // 

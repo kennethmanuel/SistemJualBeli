@@ -121,6 +121,7 @@
             this.textBoxKode.Name = "textBoxKode";
             this.textBoxKode.Size = new System.Drawing.Size(108, 32);
             this.textBoxKode.TabIndex = 2;
+            this.textBoxKode.TextChanged += new System.EventHandler(this.textBoxKode_TextChanged);
             // 
             // label2
             // 
@@ -141,7 +142,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(647, 60);
             this.label1.TabIndex = 29;
-            this.label1.Text = "TAMBAH PELANGGAN";
+            this.label1.Text = "UBAH PELANGGAN";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonKeluar
@@ -155,6 +156,7 @@
             this.buttonKeluar.TabIndex = 33;
             this.buttonKeluar.Text = "KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
             // buttonKosongi
             // 
@@ -194,6 +196,7 @@
             this.Controls.Add(this.buttonUbah);
             this.Name = "FormUbahPelanggan";
             this.Text = "FormUbahPelanggan";
+            this.Load += new System.EventHandler(this.FormUbahPelanggan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

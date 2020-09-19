@@ -116,6 +116,7 @@
             // 
             // textBoxKode
             // 
+            this.textBoxKode.Enabled = false;
             this.textBoxKode.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxKode.Location = new System.Drawing.Point(189, 28);
             this.textBoxKode.Name = "textBoxKode";
@@ -155,6 +156,7 @@
             this.buttonKeluar.TabIndex = 28;
             this.buttonKeluar.Text = "KELUAR";
             this.buttonKeluar.UseVisualStyleBackColor = false;
+            this.buttonKeluar.Click += new System.EventHandler(this.buttonKeluar_Click);
             // 
             // buttonKosongi
             // 
@@ -194,6 +196,7 @@
             this.Controls.Add(this.buttonSimpan);
             this.Name = "FormTambahPelanggan";
             this.Text = "FormTambahPelanggan";
+            this.Load += new System.EventHandler(this.FormTambahPelanggan_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

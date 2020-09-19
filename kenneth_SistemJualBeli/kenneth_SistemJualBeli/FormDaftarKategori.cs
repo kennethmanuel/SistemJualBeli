@@ -16,5 +16,27 @@ namespace kenneth_SistemJualBeli
         {
             InitializeComponent();
         }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            FormTambahKategori formTambahKategori = new FormTambahKategori();
+            formTambahKategori.Owner = this;
+            formTambahKategori.Show();
+        }
+
+        private void buttonUbah_Click(object sender, EventArgs e)
+        {
+            FormUbahKategori formUbahKategori = new FormUbahKategori();
+            formUbahKategori.Owner = this;
+            formUbahKategori.Show();
+            this.Enabled = false;
+        }
+
+        private void buttonHapus_Click(object sender, EventArgs e)
+        {
+            FormHapusKategori formHapusKategori = new FormHapusKategori();
+            formHapusKategori.Owner = this;
+            formHapusKategori.Show();
+        }
     }
 }

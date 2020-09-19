@@ -30,10 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBoxCari = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.textBoxNamaKategori = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textBoxKodeKategori = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.buttonKeluar = new System.Windows.Forms.Button();
             this.buttonUbah = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
@@ -55,32 +55,22 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.Lavender;
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.textBoxNamaKategori);
             this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.textBoxCari);
+            this.panel1.Controls.Add(this.textBoxKodeKategori);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Location = new System.Drawing.Point(7, 63);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(670, 183);
             this.panel1.TabIndex = 16;
             // 
-            // textBoxCari
+            // textBoxNamaKategori
             // 
-            this.textBoxCari.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxCari.Location = new System.Drawing.Point(215, 33);
-            this.textBoxCari.Name = "textBoxCari";
-            this.textBoxCari.Size = new System.Drawing.Size(108, 32);
-            this.textBoxCari.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(22, 33);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(164, 24);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "Kode kategori: ";
+            this.textBoxNamaKategori.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNamaKategori.Location = new System.Drawing.Point(215, 97);
+            this.textBoxNamaKategori.Name = "textBoxNamaKategori";
+            this.textBoxNamaKategori.Size = new System.Drawing.Size(282, 32);
+            this.textBoxNamaKategori.TabIndex = 4;
             // 
             // label3
             // 
@@ -92,13 +82,23 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Nama Kategori: ";
             // 
-            // textBox1
+            // textBoxKodeKategori
             // 
-            this.textBox1.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(215, 97);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(282, 32);
-            this.textBox1.TabIndex = 4;
+            this.textBoxKodeKategori.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxKodeKategori.Location = new System.Drawing.Point(215, 33);
+            this.textBoxKodeKategori.Name = "textBoxKodeKategori";
+            this.textBoxKodeKategori.Size = new System.Drawing.Size(108, 32);
+            this.textBoxKodeKategori.TabIndex = 2;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(22, 33);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(164, 24);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "Kode kategori: ";
             // 
             // buttonKeluar
             // 
@@ -135,6 +135,7 @@
             this.buttonTambah.TabIndex = 21;
             this.buttonTambah.Text = "SIMPAN ";
             this.buttonTambah.UseVisualStyleBackColor = false;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // FormTambahKategori
             // 
@@ -159,9 +160,9 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textBoxNamaKategori;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBoxCari;
+        private System.Windows.Forms.TextBox textBoxKodeKategori;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonKeluar;
         private System.Windows.Forms.Button buttonUbah;

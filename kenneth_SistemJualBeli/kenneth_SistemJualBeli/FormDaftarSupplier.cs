@@ -16,5 +16,26 @@ namespace kenneth_SistemJualBeli
         {
             InitializeComponent();
         }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            FormTambahSupplier formTambahSupplier = new FormTambahSupplier();
+            formTambahSupplier.Owner = this;
+            formTambahSupplier.Show();
+        }
+
+        private void buttonUbah_Click(object sender, EventArgs e)
+        {
+            FormUbahSupplier formUbahSupplier = new FormUbahSupplier();
+            formUbahSupplier.Owner = this;
+            formUbahSupplier.Show();
+        }
+
+        private void buttonHapus_Click(object sender, EventArgs e)
+        {
+            FormHapusSupplier formHapusSupplier = new FormHapusSupplier();
+            formHapusSupplier.Owner = this;
+            formHapusSupplier.Show();
+        }
     }
 }

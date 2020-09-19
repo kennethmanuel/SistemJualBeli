@@ -109,6 +109,18 @@
     <Compile Include="FormHapusPegawai.Designer.cs">
       <DependentUpon>FormHapusPegawai.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormHapusPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHapusPelanggan.Designer.cs">
+      <DependentUpon>FormHapusPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormHapusSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormHapusSupplier.Designer.cs">
+      <DependentUpon>FormHapusSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +151,18 @@
     <Compile Include="FormTambahPegawai.Designer.cs">
       <DependentUpon>FormTambahPegawai.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormTambahPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahPelanggan.Designer.cs">
+      <DependentUpon>FormTambahPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormTambahSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormTambahSupplier.Designer.cs">
+      <DependentUpon>FormTambahSupplier.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormUbahBarang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,6 +180,18 @@
     </Compile>
     <Compile Include="FormUbahPegawai.Designer.cs">
       <DependentUpon>FormUbahPegawai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUbahPelanggan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahPelanggan.Designer.cs">
+      <DependentUpon>FormUbahPelanggan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormUbahSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUbahSupplier.Designer.cs">
+      <DependentUpon>FormUbahSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUtama.cs">
       <SubType>Form</SubType>
@@ -195,6 +231,12 @@
     <EmbeddedResource Include="FormHapusPegawai.resx">
       <DependentUpon>FormHapusPegawai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormHapusPelanggan.resx">
+      <DependentUpon>FormHapusPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormHapusSupplier.resx">
+      <DependentUpon>FormHapusSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
@@ -210,6 +252,12 @@
     <EmbeddedResource Include="FormTambahPegawai.resx">
       <DependentUpon>FormTambahPegawai.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahPelanggan.resx">
+      <DependentUpon>FormTambahPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormTambahSupplier.resx">
+      <DependentUpon>FormTambahSupplier.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormUbahBarang.resx">
       <DependentUpon>FormUbahBarang.cs</DependentUpon>
     </EmbeddedResource>
@@ -218,6 +266,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormUbahPegawai.resx">
       <DependentUpon>FormUbahPegawai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahPelanggan.resx">
+      <DependentUpon>FormUbahPelanggan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUbahSupplier.resx">
+      <DependentUpon>FormUbahSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">
       <DependentUpon>FormUtama.cs</DependentUpon>

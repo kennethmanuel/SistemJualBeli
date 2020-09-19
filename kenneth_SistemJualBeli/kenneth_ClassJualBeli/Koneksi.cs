@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using MySql.Data.MySqlClient;
+using MySql.Data.MySqlClient; 
+using System.Configuration;
 
 namespace kenneth_ClassJualBeli
 {
@@ -16,6 +17,16 @@ namespace kenneth_ClassJualBeli
         #endregion
 
         #region constructors
+        public Koneksi()
+        {
+            koneksiDB = new MySqlConnection();
+
+            //set connection string sesuai yang ada di App.Config
+            KoneksiDB.ConnectionString = ConfigurationManager.ConnectionStrings["namakoneksi"].ConnectionString;
+
+            //panggil method connect
+            Connect();
+        }
         public Koneksi(string namaServer, string namaDatabase, string username, string password)
         {
             string strConnectionString;
@@ -32,10 +43,10 @@ namespace kenneth_ClassJualBeli
             this.KoneksiDB.ConnectionString = strConnectionString;
 
             Connect();
+
+            UpdateAppConfig(strConnectionString);
         }
         #endregion
-
-        
 
         #region method
         public void Connect()
@@ -46,6 +57,30 @@ namespace kenneth_ClassJualBeli
                 KoneksiDB.Close();
             }
             KoneksiDB.Open();
+        }
+
+        public void UpdateAppConfig(string con)
+        {
+            //buka konfigurasi App.Config
+            Configuration config = ConfigurationManager.OpenExeConfiguration(ConfigurationUserLevel.None);
+
+            //set App.Config pada section yang telah dibuat sebelumnya
+            config.ConnectionStrings.ConnectionStrings["namakoneksi"].ConnectionString = con;
+
+            //Simpan App.Config yang telah diupdate 
+            config.Save(ConfigurationSaveMode.Modified, true);
+
+            //Reload App.Config dengan pengaturan yang baru
+            ConfigurationManager.RefreshSection("connectionStrings");
+        }
+
+        public static void JalankanPerintahDML(string sql)
+        {
+            Koneksi k = new Koneksi();
+
+            MySqlCommand c = new MySqlCommand(sql, k.koneksiDB);
+
+            c.ExecuteNonQuery();
         }
         #endregion
 

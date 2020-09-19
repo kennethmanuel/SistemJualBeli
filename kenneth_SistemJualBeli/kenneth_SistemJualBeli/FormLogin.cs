@@ -21,6 +21,10 @@ namespace kenneth_SistemJualBeli
         private void FormLogin_Load(object sender, EventArgs e)
         {
             this.Height = panelLogin.Height + 50;
+            textBoxServer.Text = "localhost";
+            textBoxDatabase.Text = "si_jual_beli";
+            textBoxUsername.Text = "andrew";
+            textBoxPassword.Text = "1234";
         }
 
         private void linkLabelPengaturanLanjut_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
@@ -50,21 +54,24 @@ namespace kenneth_SistemJualBeli
         {
             try
             {
-                if(textBoxUsername.Text == "")
+                if (textBoxUsername.Text == "")
                 {
                     MessageBox.Show("Username tidak boleh dikosongi.");
                 }
-                else if(textBoxServer.Text == "")
+                else if (textBoxServer.Text == "")
                 {
                     MessageBox.Show("Server tidak boleh dikosongi.");
                 }
-                else if(textBoxDatabase.Text == "")
+                else if (textBoxDatabase.Text == "")
                 {
                     MessageBox.Show("Database tidak boleh dikosongi.");
                 }
-                else 
+                else
                 {
                     Koneksi koneksi = new Koneksi(textBoxServer.Text, textBoxDatabase.Text, textBoxUsername.Text, textBoxPassword.Text);
+
+                    //uji coba create objek bertipe Koneksi menggunakan default constructor
+                    Koneksi koneksi2 = new Koneksi();
 
                     MessageBox.Show("Koneksi berhasil. Selamat menggunakan aplikasi.", "Informasi");
 

@@ -6,3 +6,10 @@ D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 2\kenneth_SistemJualBeli\kenneth_ClassJual
 D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 2\kenneth_SistemJualBeli\kenneth_ClassJualBeli\obj\Debug\kenneth_ClassJualBeli.csproj.CopyComplete
 D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 2\kenneth_SistemJualBeli\kenneth_ClassJualBeli\obj\Debug\kenneth_ClassJualBeli.dll
 D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 2\kenneth_SistemJualBeli\kenneth_ClassJualBeli\obj\Debug\kenneth_ClassJualBeli.pdb
+D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 3\kenneth_SistemJualBeli\kenneth_ClassJualBeli\bin\Debug\kenneth_ClassJualBeli.dll
+D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 3\kenneth_SistemJualBeli\kenneth_ClassJualBeli\bin\Debug\kenneth_ClassJualBeli.pdb
+D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 3\kenneth_SistemJualBeli\kenneth_ClassJualBeli\obj\Debug\kenneth_ClassJualBeli.csprojAssemblyReference.cache
+D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 3\kenneth_SistemJualBeli\kenneth_ClassJualBeli\obj\Debug\kenneth_ClassJualBeli.csproj.CoreCompileInputs.cache
+D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 3\kenneth_SistemJualBeli\kenneth_ClassJualBeli\obj\Debug\kenneth_ClassJualBeli.csproj.CopyComplete
+D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 3\kenneth_SistemJualBeli\kenneth_ClassJualBeli\obj\Debug\kenneth_ClassJualBeli.dll
+D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 3\kenneth_SistemJualBeli\kenneth_ClassJualBeli\obj\Debug\kenneth_ClassJualBeli.pdb

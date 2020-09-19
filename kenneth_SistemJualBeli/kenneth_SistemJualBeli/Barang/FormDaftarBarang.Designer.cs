@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewBarang = new System.Windows.Forms.DataGridView();
             this.comboBoxCari = new System.Windows.Forms.ComboBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBoxCari = new System.Windows.Forms.TextBox();
@@ -38,19 +38,19 @@
             this.buttonHapus = new System.Windows.Forms.Button();
             this.buttonUbah = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBarang)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // dataGridViewBarang
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 201);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(860, 239);
-            this.dataGridView1.TabIndex = 16;
+            this.dataGridViewBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBarang.Location = new System.Drawing.Point(18, 201);
+            this.dataGridViewBarang.Name = "dataGridViewBarang";
+            this.dataGridViewBarang.RowHeadersWidth = 51;
+            this.dataGridViewBarang.RowTemplate.Height = 24;
+            this.dataGridViewBarang.Size = new System.Drawing.Size(860, 239);
+            this.dataGridViewBarang.TabIndex = 16;
             // 
             // comboBoxCari
             // 
@@ -58,11 +58,13 @@
             this.comboBoxCari.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCari.FormattingEnabled = true;
             this.comboBoxCari.Items.AddRange(new object[] {
+            "Kode Barang",
+            "Nama Barang",
             "Barcode",
             "Harga Jual",
-            "Kode Barang",
-            "Nama",
-            "Stok"});
+            "Stok",
+            "Kode Kategori",
+            "Nama Kategori"});
             this.comboBoxCari.Location = new System.Drawing.Point(242, 33);
             this.comboBoxCari.Name = "comboBoxCari";
             this.comboBoxCari.Size = new System.Drawing.Size(193, 32);
@@ -86,6 +88,7 @@
             this.textBoxCari.Name = "textBoxCari";
             this.textBoxCari.Size = new System.Drawing.Size(349, 32);
             this.textBoxCari.TabIndex = 2;
+            this.textBoxCari.TextChanged += new System.EventHandler(this.textBoxCari_TextChanged);
             // 
             // label2
             // 
@@ -165,7 +168,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(890, 512);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewBarang);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonKeluar);
@@ -174,7 +177,8 @@
             this.Controls.Add(this.buttonTambah);
             this.Name = "FormDaftarBarang";
             this.Text = "FormDaftarBarang";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FormDaftarBarang_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBarang)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -183,7 +187,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewBarang;
         private System.Windows.Forms.ComboBox comboBoxCari;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBoxCari;

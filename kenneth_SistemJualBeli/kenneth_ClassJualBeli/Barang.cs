@@ -49,9 +49,9 @@ namespace kenneth_ClassJualBeli
             MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
             string hasilKode = "";
-            if(hasil.Read() == true)
+            if (hasil.Read() == true)
             {
-                if(hasil.GetValue(0).ToString() != "") //jika barang dengan kategori parameter belum ada
+                if (hasil.GetValue(0).ToString() != "") //jika barang dengan kategori parameter belum ada
                 {
                     int kodeTerbaru = int.Parse(hasil.GetValue(0).ToString());
 
@@ -65,6 +65,37 @@ namespace kenneth_ClassJualBeli
             }
 
             return hasilKode;
+        }
+
+        public static List<Barang> BacaData(string kriteria, string nilaiKriteria)
+        {
+            string sql = "";
+            if (kriteria == "")
+            {
+                sql = "SELECT b.kodebarang, b.barcode, b.nama AS 'NamaBarang', b.hargajual, b.stok, b.kodekategori, k.nama AS 'Nama Kategori' FROM barang b INNER JOIN kategori k ON b.kodekategori = k.kodekategori";
+            }
+            else
+            {
+                sql = "SELECT b.kodebarang, b.barcode, b.nama AS 'NamaBarang', b.hargajual, b.stok, b.kodekategori, k.nama AS 'Nama Kategori' FROM barang b INNER JOIN kategori k ON b.kodekategori = k.kodekategori WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
+            }
+
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+
+            List<Barang> listHasil = new List<Barang>();
+
+            while (hasil.Read() == true)
+            {
+                string kodeBarang = hasil.GetValue(0).ToString();
+                string barcode = hasil.GetValue(1).ToString();
+                string nama = hasil.GetValue(2).ToString();
+                int hargaJual = int.Parse(hasil.GetValue(3).ToString());
+                int stok = int.Parse(hasil.GetValue(4).ToString());
+                Kategori k = new Kategori(hasil.GetValue(5).ToString(), hasil.GetValue(6).ToString());
+                Barang b = new Barang(kodeBarang, nama, hargaJual, barcode, stok, k);
+
+                listHasil.Add(b);
+            }
+            return listHasil;
         }
 
     }

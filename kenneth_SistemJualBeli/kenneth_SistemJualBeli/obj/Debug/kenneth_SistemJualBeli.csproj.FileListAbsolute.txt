@@ -134,3 +134,41 @@ D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 5\kenneth_SistemJualBeli\kenneth_SistemJua
 D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 5\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.csproj.CopyComplete
 D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 5\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.exe
 D:\KULIAH\PEMROGRAMAN BASIS DATA\WEEK 5\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.pdb
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\bin\Debug\kenneth_SistemJualBeli.exe.config
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\bin\Debug\kenneth_SistemJualBeli.exe
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\bin\Debug\kenneth_SistemJualBeli.pdb
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\bin\Debug\kenneth_ClassJualBeli.dll
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\bin\Debug\MySql.Data.dll
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\bin\Debug\kenneth_ClassJualBeli.pdb
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.csprojAssemblyReference.cache
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormDaftarBarang.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormDaftarKategori.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormDaftarNotaBeli.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormDaftarNotaJual.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormDaftarPegawai.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormDaftarPelanggan.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormDaftarSupplier.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormHapusBarang.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormHapusKategori.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormHapusPegawai.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormHapusPelanggan.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormHapusSupplier.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormLogin.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormTambahBarang.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormTambahKategori.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormTambahNotaJual.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormTambahPegawai.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormTambahPelanggan.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormTambahSupplier.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormUbahBarang.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormUbahKategori.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormUbahPegawai.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormUbahPelanggan.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormUbahSupplier.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.FormUtama.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.Properties.Resources.resources
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.csproj.GenerateResource.cache
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.csproj.CoreCompileInputs.cache
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.csproj.CopyComplete
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.exe
+D:\Kuliah\PEMROGRAMAN BASIS DATA\SistemJualBeli\kenneth_SistemJualBeli\kenneth_SistemJualBeli\obj\Debug\kenneth_SistemJualBeli.pdb

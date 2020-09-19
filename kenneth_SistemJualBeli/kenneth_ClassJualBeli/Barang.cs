@@ -36,6 +36,7 @@ namespace kenneth_ClassJualBeli
         public Kategori Kategori { get => kategori; set => kategori = value; }
         #endregion
 
+        #region methods
         public static void TambahData(Barang b)
         {
             string sql = "INSERT INTO barang(kodebarang, barcode, nama, hargajual, stok, kodekategori) VALUES('" + b.KodeBarang + "', '" + b.Barcode + "', '" + b.Nama + "', '" + b.HargaJual + "', '" + b.Stok + "', '" + b.Kategori.KodeKategori + "')";
@@ -91,12 +92,14 @@ namespace kenneth_ClassJualBeli
                 int hargaJual = int.Parse(hasil.GetValue(3).ToString());
                 int stok = int.Parse(hasil.GetValue(4).ToString());
                 Kategori k = new Kategori(hasil.GetValue(5).ToString(), hasil.GetValue(6).ToString());
+
                 Barang b = new Barang(kodeBarang, nama, hargaJual, barcode, stok, k);
 
                 listHasil.Add(b);
             }
             return listHasil;
         }
+        #endregion
 
     }
 }

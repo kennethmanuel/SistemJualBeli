@@ -43,14 +43,14 @@
             this.textBoxAlamat = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label10 = new System.Windows.Forms.Label();
+            this.textBoxUlangPassword = new System.Windows.Forms.TextBox();
+            this.textBoxPassword = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.buttonKeluar = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.textBoxPassword = new System.Windows.Forms.TextBox();
-            this.textBoxUlangPassword = new System.Windows.Forms.TextBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -154,6 +154,7 @@
             // 
             // textBoxKodePegawai
             // 
+            this.textBoxKodePegawai.Enabled = false;
             this.textBoxKodePegawai.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxKodePegawai.Location = new System.Drawing.Point(215, 33);
             this.textBoxKodePegawai.Name = "textBoxKodePegawai";
@@ -216,6 +217,61 @@
             this.panel1.Size = new System.Drawing.Size(531, 515);
             this.panel1.TabIndex = 40;
             // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(24, 455);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(97, 24);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Jabatan:";
+            // 
+            // textBoxUlangPassword
+            // 
+            this.textBoxUlangPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxUlangPassword.Location = new System.Drawing.Point(215, 404);
+            this.textBoxUlangPassword.Name = "textBoxUlangPassword";
+            this.textBoxUlangPassword.Size = new System.Drawing.Size(282, 32);
+            this.textBoxUlangPassword.TabIndex = 17;
+            // 
+            // textBoxPassword
+            // 
+            this.textBoxPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxPassword.Location = new System.Drawing.Point(215, 357);
+            this.textBoxPassword.Name = "textBoxPassword";
+            this.textBoxPassword.Size = new System.Drawing.Size(282, 32);
+            this.textBoxPassword.TabIndex = 16;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(22, 404);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(185, 24);
+            this.label9.TabIndex = 15;
+            this.label9.Text = "Ulang Password: ";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(22, 357);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(114, 24);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "Password:";
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePicker1.Location = new System.Drawing.Point(215, 128);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(200, 32);
+            this.dateTimePicker1.TabIndex = 13;
+            // 
             // buttonKeluar
             // 
             this.buttonKeluar.BackColor = System.Drawing.Color.Navy;
@@ -240,61 +296,6 @@
             this.buttonTambah.Text = "TAMBAH";
             this.buttonTambah.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(215, 128);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePicker1.TabIndex = 13;
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(22, 357);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(114, 24);
-            this.label8.TabIndex = 14;
-            this.label8.Text = "Password:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(22, 404);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(185, 24);
-            this.label9.TabIndex = 15;
-            this.label9.Text = "Ulang Password: ";
-            // 
-            // textBoxPassword
-            // 
-            this.textBoxPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxPassword.Location = new System.Drawing.Point(215, 357);
-            this.textBoxPassword.Name = "textBoxPassword";
-            this.textBoxPassword.Size = new System.Drawing.Size(282, 32);
-            this.textBoxPassword.TabIndex = 16;
-            // 
-            // textBoxUlangPassword
-            // 
-            this.textBoxUlangPassword.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxUlangPassword.Location = new System.Drawing.Point(215, 404);
-            this.textBoxUlangPassword.Name = "textBoxUlangPassword";
-            this.textBoxUlangPassword.Size = new System.Drawing.Size(282, 32);
-            this.textBoxUlangPassword.TabIndex = 17;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(24, 455);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(97, 24);
-            this.label10.TabIndex = 18;
-            this.label10.Text = "Jabatan:";
-            // 
             // FormTambahPegawai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -308,6 +309,7 @@
             this.Controls.Add(this.buttonTambah);
             this.Name = "FormTambahPegawai";
             this.Text = "FormTambahPegawai";
+            this.Load += new System.EventHandler(this.FormTambahPegawai_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

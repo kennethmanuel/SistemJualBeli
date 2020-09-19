@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kenneth_ClassJualBeli;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,14 +13,10 @@ namespace kenneth_SistemJualBeli
 {
     public partial class FormDaftarPegawai : Form
     {
+        List<Pegawai> listPegawai = new List<Pegawai>();
         public FormDaftarPegawai()
         {
             InitializeComponent();
-        }
-
-        private void buttonKeluar_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void buttonTambah_Click(object sender, EventArgs e)
@@ -41,6 +38,84 @@ namespace kenneth_SistemJualBeli
             FormHapusPegawai formHapusPegawai = new FormHapusPegawai();
             formHapusPegawai.Owner = this;
             formHapusPegawai.Show();
+        }
+
+        private void buttonKeluar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void FormatDataGrid()
+        {
+            dataGridViewPegawai.Columns.Add("KodePegawai", "KodePegawai");
+            dataGridViewPegawai.Columns.Add("Nama", "Nama");
+            dataGridViewPegawai.Columns.Add("TglLahir", "TglLahir");
+            dataGridViewPegawai.Columns.Add("Alamat", "Alamat");
+            dataGridViewPegawai.Columns.Add("Gaji", "Gaji");
+            dataGridViewPegawai.Columns.Add("Username", "Username");
+            dataGridViewPegawai.Columns.Add("Jabatan", "Jabatan");
+        }
+
+        private void TampilDataGrid()
+        {
+            if (listPegawai.Count > 0)
+            {
+                dataGridViewPegawai.Rows.Clear();
+                foreach (Pegawai p in listPegawai)
+                {
+                    dataGridViewPegawai.Rows.Add(p.KodePegawai, p.Nama, p.TanggalLahir.ToString(), p.Alamat, p.Gaji, p.Username, p.Jabatan.Nama);
+                }
+            }
+            else
+            {
+                dataGridViewPegawai.DataSource = null;
+            }
+        }
+
+        private void FormDaftarPegawai_Load(object sender, EventArgs e)
+        {
+            FormatDataGrid();
+
+            listPegawai = Pegawai.BacaData("", "");
+
+            TampilDataGrid();
+        }
+
+        private void textBoxCari_TextChanged(object sender, EventArgs e)
+        {
+            string kriteria = "";
+            if(comboBoxCari.Text == "Kode Pegawai")
+            {
+                kriteria = "p.kodepegawai";
+            }
+            else if(comboBoxCari.Text == "Nama")
+            {
+                kriteria = "p.nama";
+            }
+            else if(comboBoxCari.Text == "TglLahir")
+            {
+                kriteria = "p.tgllahir";
+            }
+            else if(comboBoxCari.Text == "Alamat")
+            {
+                kriteria = "p.alamat";
+            }
+            else if(comboBoxCari.Text == "Gaji")
+            {
+                kriteria = "p.gaji";
+            }
+            else if(comboBoxCari.Text == "Username")
+            {
+                kriteria = "p.username";
+            }
+            else if(comboBoxCari.Text == "Jabatan")
+            {
+                kriteria = "j.nama";
+            }
+
+            listPegawai = Pegawai.BacaData(kriteria, textBoxCari.Text);
+
+            TampilDataGrid();
         }
     }
 }

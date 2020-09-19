@@ -1,4 +1,5 @@
-﻿using System;
+﻿using kenneth_ClassJualBeli;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,14 @@ namespace kenneth_SistemJualBeli
         public FormTambahPegawai()
         {
             InitializeComponent();
+        }
+
+        private void FormTambahPegawai_Load(object sender, EventArgs e)
+        {
+            string kodeBaru = Pegawai.GenerateCode().ToString();
+
+            textBoxKodePegawai.Text = kodeBaru;
+            textBoxNamaPegawai.Focus();
         }
     }
 }

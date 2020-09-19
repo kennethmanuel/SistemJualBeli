@@ -37,9 +37,9 @@
             this.buttonHapus = new System.Windows.Forms.Button();
             this.buttonUbah = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewPegawai = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPegawai)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -60,6 +60,7 @@
             this.textBoxCari.Name = "textBoxCari";
             this.textBoxCari.Size = new System.Drawing.Size(349, 32);
             this.textBoxCari.TabIndex = 2;
+            this.textBoxCari.TextChanged += new System.EventHandler(this.textBoxCari_TextChanged);
             // 
             // comboBoxCari
             // 
@@ -67,13 +68,13 @@
             this.comboBoxCari.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBoxCari.FormattingEnabled = true;
             this.comboBoxCari.Items.AddRange(new object[] {
-            "Alamat",
-            "Gaji",
             "Kode Pegawai",
             "Nama",
-            "Password",
-            "Tgl Lahir",
-            "Username"});
+            "TglLahir",
+            "Alamat",
+            "Gaji",
+            "Username",
+            "Jabatan"});
             this.comboBoxCari.Location = new System.Drawing.Point(242, 33);
             this.comboBoxCari.Name = "comboBoxCari";
             this.comboBoxCari.Size = new System.Drawing.Size(193, 32);
@@ -153,15 +154,15 @@
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
-            // dataGridView1
+            // dataGridViewPegawai
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 201);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(860, 239);
-            this.dataGridView1.TabIndex = 16;
+            this.dataGridViewPegawai.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewPegawai.Location = new System.Drawing.Point(18, 201);
+            this.dataGridViewPegawai.Name = "dataGridViewPegawai";
+            this.dataGridViewPegawai.RowHeadersWidth = 51;
+            this.dataGridViewPegawai.RowTemplate.Height = 24;
+            this.dataGridViewPegawai.Size = new System.Drawing.Size(860, 239);
+            this.dataGridViewPegawai.TabIndex = 16;
             // 
             // FormDaftarPegawai
             // 
@@ -175,12 +176,13 @@
             this.Controls.Add(this.buttonHapus);
             this.Controls.Add(this.buttonUbah);
             this.Controls.Add(this.buttonTambah);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewPegawai);
             this.Name = "FormDaftarPegawai";
             this.Text = "FormDaftarPegawai";
+            this.Load += new System.EventHandler(this.FormDaftarPegawai_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPegawai)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -196,6 +198,6 @@
         private System.Windows.Forms.Button buttonHapus;
         private System.Windows.Forms.Button buttonUbah;
         private System.Windows.Forms.Button buttonTambah;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewPegawai;
     }
 }

@@ -16,9 +16,10 @@ namespace kenneth_ClassJualBeli
         private int gaji;
         private string username;
         private string password;
+        private Jabatan jabatan;
 
         #region constructors
-        public Pegawai(int kodePegawai, string nama, DateTime tanggalLahir, string alamat, int gaji, string username, string password)
+        public Pegawai(int kodePegawai, string nama, DateTime tanggalLahir, string alamat, int gaji, string username, string password, Jabatan jabatan)
         {
             this.kodePegawai = kodePegawai;
             this.nama = nama;
@@ -27,6 +28,7 @@ namespace kenneth_ClassJualBeli
             this.gaji = gaji;
             this.username = username;
             this.password = password;
+            this.Jabatan = jabatan;
         }
         #endregion
 
@@ -38,14 +40,7 @@ namespace kenneth_ClassJualBeli
         public int Gaji { get => gaji; set => gaji = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
-
-        public Jabatan Jabatan
-        {
-            get => default;
-            set
-            {
-            }
-        }
+        public Jabatan Jabatan { get => jabatan; set => jabatan = value; }
         #endregion
 
         #region methods
@@ -70,47 +65,56 @@ namespace kenneth_ClassJualBeli
             Koneksi.JalankanPerintahDML(sql);
         }
 
-        //public List<Pegawai> listPegawai(string kriteria, string nilaiKriteria)
-        //{
-        //    string sql = "";
+        public static List<Pegawai> BacaData(string kriteria, string nilaiKriteria)
+        {
+            string sql = "";
 
-        //    if (kriteria == "")
-        //    {
-        //        sql = "SELECT * FROM pegawai";
-        //    }
-        //    else
-        //    {
-        //        sql = "SELECT * FROM pegawai WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
-        //    }
+            if (kriteria == "")
+            {
+                sql = "SELECT p.kodepegawai, p.nama, p.tgllahir, p.alamat, p.gaji, p.username, p.password, j.idjabatan, j.nama AS 'jabatan' FROM pegawai p INNER JOIN jabatan j ON p.idjabatan = j.idjabatan ;";
+            }
+            else
+            {
+                sql = "SELECT p.kodepegawai, p.nama, p.tgllahir, p.alamat, p.gaji, p.username, p.password, j.idjabatan, j.nama AS 'jabatan' FROM pegawai p INNER JOIN jabatan j ON p.idjabatan = j.idjabatan WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%'";
 
-        //    MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            }
 
-        //    List<Pegawai> listPegawai = new List<Pegawai>();
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
 
-        //    while (hasil.Read() == true)
-        //    {
-        //        Pegawai p = new Pegawai(int.Parse(hasil.GetValue(0).ToString()), hasil.GetValue(1).ToString(), DateTime.Parse(hasil.GetValue(2).ToString()),hasil.GetValue(3).ToString(),int.Parse(hasil.GetValue(4).ToString()),hasil.GetValue(5).ToString(),hasil.GetValue(6).ToString());
+            List<Pegawai> listPegawai = new List<Pegawai>();
 
-        //        listPegawai.Add(p);
-        //    }
+            while (hasil.Read() == true)
+            {
+                Pegawai p = new Pegawai(
+                    int.Parse(hasil.GetValue(0).ToString()),
+                    hasil.GetValue(1).ToString(),
+                    DateTime.Parse(hasil.GetValue(2).ToString()),
+                    hasil.GetValue(3).ToString(),
+                    int.Parse(hasil.GetValue(4).ToString()),
+                    hasil.GetValue(5).ToString(), hasil.GetValue(6).ToString(),
+                    new Jabatan(hasil.GetValue(7).ToString(), hasil.GetValue(8).ToString())
+                    );
 
-        //    return listPegawai;
-        //}
+                listPegawai.Add(p);
+            }
 
-        //public static int GenerateCode()
-        //{
-        //    string sql = "SELECT MAX(kodepegawai) FROM pegawai";
+            return listPegawai;
+        }
 
-        //    int hasilKode = 1;
+        public static int GenerateCode()
+        {
+            string sql = "SELECT MAX(kodepegawai) FROM pegawai";
 
-        //    MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
-        //    if (hasil.Read() == true)
-        //    {
-        //        hasilKode = int.Parse(hasil.GetValue(0).ToString()) + 1;
-        //    }
+            int hasilKode = 1;
 
-        //    return hasilKode;
-        //}
+            MySqlDataReader hasil = Koneksi.JalankanPerintahQuery(sql);
+            if (hasil.Read() == true)
+            {
+                hasilKode = int.Parse(hasil.GetValue(0).ToString()) + 1;
+            }
+
+            return hasilKode;
+        }
         #endregion
     }
 }

@@ -49,16 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormDaftarBarang.cs">
+    <Compile Include="Barang\FormDaftarBarang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDaftarBarang.Designer.cs">
+    <Compile Include="Barang\FormDaftarBarang.Designer.cs">
       <DependentUpon>FormDaftarBarang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDaftarKategori.cs">
+    <Compile Include="Kategori\FormDaftarKategori.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDaftarKategori.Designer.cs">
+    <Compile Include="Kategori\FormDaftarKategori.Designer.cs">
       <DependentUpon>FormDaftarKategori.cs</DependentUpon>
     </Compile>
     <Compile Include="FormDaftarNotaBeli.cs">
@@ -73,52 +73,52 @@
     <Compile Include="FormDaftarNotaJual.Designer.cs">
       <DependentUpon>FormDaftarNotaJual.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDaftarPegawai.cs">
+    <Compile Include="Pegawai\FormDaftarPegawai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDaftarPegawai.Designer.cs">
+    <Compile Include="Pegawai\FormDaftarPegawai.Designer.cs">
       <DependentUpon>FormDaftarPegawai.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDaftarPelanggan.cs">
+    <Compile Include="Pelanggan\FormDaftarPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDaftarPelanggan.Designer.cs">
+    <Compile Include="Pelanggan\FormDaftarPelanggan.Designer.cs">
       <DependentUpon>FormDaftarPelanggan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDaftarSupplier.cs">
+    <Compile Include="Supplier\FormDaftarSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDaftarSupplier.Designer.cs">
+    <Compile Include="Supplier\FormDaftarSupplier.Designer.cs">
       <DependentUpon>FormDaftarSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHapusBarang.cs">
+    <Compile Include="Barang\FormHapusBarang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHapusBarang.Designer.cs">
+    <Compile Include="Barang\FormHapusBarang.Designer.cs">
       <DependentUpon>FormHapusBarang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHapusKategori.cs">
+    <Compile Include="Kategori\FormHapusKategori.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHapusKategori.Designer.cs">
+    <Compile Include="Kategori\FormHapusKategori.Designer.cs">
       <DependentUpon>FormHapusKategori.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHapusPegawai.cs">
+    <Compile Include="Pegawai\FormHapusPegawai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHapusPegawai.Designer.cs">
+    <Compile Include="Pegawai\FormHapusPegawai.Designer.cs">
       <DependentUpon>FormHapusPegawai.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHapusPelanggan.cs">
+    <Compile Include="Pelanggan\FormHapusPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHapusPelanggan.Designer.cs">
+    <Compile Include="Pelanggan\FormHapusPelanggan.Designer.cs">
       <DependentUpon>FormHapusPelanggan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormHapusSupplier.cs">
+    <Compile Include="Supplier\FormHapusSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormHapusSupplier.Designer.cs">
+    <Compile Include="Supplier\FormHapusSupplier.Designer.cs">
       <DependentUpon>FormHapusSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
@@ -127,16 +127,16 @@
     <Compile Include="FormLogin.Designer.cs">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTambahBarang.cs">
+    <Compile Include="Barang\FormTambahBarang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTambahBarang.Designer.cs">
+    <Compile Include="Barang\FormTambahBarang.Designer.cs">
       <DependentUpon>FormTambahBarang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTambahKategori.cs">
+    <Compile Include="Kategori\FormTambahKategori.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTambahKategori.Designer.cs">
+    <Compile Include="Kategori\FormTambahKategori.Designer.cs">
       <DependentUpon>FormTambahKategori.cs</DependentUpon>
     </Compile>
     <Compile Include="FormTambahNotaJual.cs">
@@ -145,52 +145,52 @@
     <Compile Include="FormTambahNotaJual.Designer.cs">
       <DependentUpon>FormTambahNotaJual.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTambahPegawai.cs">
+    <Compile Include="Pegawai\FormTambahPegawai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTambahPegawai.Designer.cs">
+    <Compile Include="Pegawai\FormTambahPegawai.Designer.cs">
       <DependentUpon>FormTambahPegawai.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTambahPelanggan.cs">
+    <Compile Include="Pelanggan\FormTambahPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTambahPelanggan.Designer.cs">
+    <Compile Include="Pelanggan\FormTambahPelanggan.Designer.cs">
       <DependentUpon>FormTambahPelanggan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTambahSupplier.cs">
+    <Compile Include="Supplier\FormTambahSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTambahSupplier.Designer.cs">
+    <Compile Include="Supplier\FormTambahSupplier.Designer.cs">
       <DependentUpon>FormTambahSupplier.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUbahBarang.cs">
+    <Compile Include="Barang\FormUbahBarang.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUbahBarang.Designer.cs">
+    <Compile Include="Barang\FormUbahBarang.Designer.cs">
       <DependentUpon>FormUbahBarang.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUbahKategori.cs">
+    <Compile Include="Kategori\FormUbahKategori.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUbahKategori.Designer.cs">
+    <Compile Include="Kategori\FormUbahKategori.Designer.cs">
       <DependentUpon>FormUbahKategori.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUbahPegawai.cs">
+    <Compile Include="Pegawai\FormUbahPegawai.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUbahPegawai.Designer.cs">
+    <Compile Include="Pegawai\FormUbahPegawai.Designer.cs">
       <DependentUpon>FormUbahPegawai.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUbahPelanggan.cs">
+    <Compile Include="Pelanggan\FormUbahPelanggan.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUbahPelanggan.Designer.cs">
+    <Compile Include="Pelanggan\FormUbahPelanggan.Designer.cs">
       <DependentUpon>FormUbahPelanggan.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUbahSupplier.cs">
+    <Compile Include="Supplier\FormUbahSupplier.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUbahSupplier.Designer.cs">
+    <Compile Include="Supplier\FormUbahSupplier.Designer.cs">
       <DependentUpon>FormUbahSupplier.cs</DependentUpon>
     </Compile>
     <Compile Include="FormUtama.cs">
@@ -201,10 +201,10 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="FormDaftarBarang.resx">
+    <EmbeddedResource Include="Barang\FormDaftarBarang.resx">
       <DependentUpon>FormDaftarBarang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDaftarKategori.resx">
+    <EmbeddedResource Include="Kategori\FormDaftarKategori.resx">
       <DependentUpon>FormDaftarKategori.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormDaftarNotaBeli.resx">
@@ -213,64 +213,64 @@
     <EmbeddedResource Include="FormDaftarNotaJual.resx">
       <DependentUpon>FormDaftarNotaJual.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDaftarPegawai.resx">
+    <EmbeddedResource Include="Pegawai\FormDaftarPegawai.resx">
       <DependentUpon>FormDaftarPegawai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDaftarPelanggan.resx">
+    <EmbeddedResource Include="Pelanggan\FormDaftarPelanggan.resx">
       <DependentUpon>FormDaftarPelanggan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDaftarSupplier.resx">
+    <EmbeddedResource Include="Supplier\FormDaftarSupplier.resx">
       <DependentUpon>FormDaftarSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHapusBarang.resx">
+    <EmbeddedResource Include="Barang\FormHapusBarang.resx">
       <DependentUpon>FormHapusBarang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHapusKategori.resx">
+    <EmbeddedResource Include="Kategori\FormHapusKategori.resx">
       <DependentUpon>FormHapusKategori.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHapusPegawai.resx">
+    <EmbeddedResource Include="Pegawai\FormHapusPegawai.resx">
       <DependentUpon>FormHapusPegawai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHapusPelanggan.resx">
+    <EmbeddedResource Include="Pelanggan\FormHapusPelanggan.resx">
       <DependentUpon>FormHapusPelanggan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormHapusSupplier.resx">
+    <EmbeddedResource Include="Supplier\FormHapusSupplier.resx">
       <DependentUpon>FormHapusSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTambahBarang.resx">
+    <EmbeddedResource Include="Barang\FormTambahBarang.resx">
       <DependentUpon>FormTambahBarang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTambahKategori.resx">
+    <EmbeddedResource Include="Kategori\FormTambahKategori.resx">
       <DependentUpon>FormTambahKategori.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormTambahNotaJual.resx">
       <DependentUpon>FormTambahNotaJual.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTambahPegawai.resx">
+    <EmbeddedResource Include="Pegawai\FormTambahPegawai.resx">
       <DependentUpon>FormTambahPegawai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTambahPelanggan.resx">
+    <EmbeddedResource Include="Pelanggan\FormTambahPelanggan.resx">
       <DependentUpon>FormTambahPelanggan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTambahSupplier.resx">
+    <EmbeddedResource Include="Supplier\FormTambahSupplier.resx">
       <DependentUpon>FormTambahSupplier.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUbahBarang.resx">
+    <EmbeddedResource Include="Barang\FormUbahBarang.resx">
       <DependentUpon>FormUbahBarang.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUbahKategori.resx">
+    <EmbeddedResource Include="Kategori\FormUbahKategori.resx">
       <DependentUpon>FormUbahKategori.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUbahPegawai.resx">
+    <EmbeddedResource Include="Pegawai\FormUbahPegawai.resx">
       <DependentUpon>FormUbahPegawai.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUbahPelanggan.resx">
+    <EmbeddedResource Include="Pelanggan\FormUbahPelanggan.resx">
       <DependentUpon>FormUbahPelanggan.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUbahSupplier.resx">
+    <EmbeddedResource Include="Supplier\FormUbahSupplier.resx">
       <DependentUpon>FormUbahSupplier.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormUtama.resx">

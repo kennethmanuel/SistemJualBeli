@@ -38,6 +38,14 @@ namespace kenneth_ClassJualBeli
         public int Gaji { get => gaji; set => gaji = value; }
         public string Username { get => username; set => username = value; }
         public string Password { get => password; set => password = value; }
+
+        public Jabatan Jabatan
+        {
+            get => default;
+            set
+            {
+            }
+        }
         #endregion
 
         #region methods

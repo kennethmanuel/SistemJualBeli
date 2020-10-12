@@ -93,6 +93,25 @@ namespace kenneth_ClassJualBeli
 
             return hasil;
         }
+
+        public static string GetNamaServer()
+        {
+            //ambil connection string yang tersimpan di App.config
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["namakoneksi"].ConnectionString;
+
+            return con.DataSource;
+        }
+
+        public static string GetNamaDatabase()
+        {
+            //ambil connection string yang tersimpan di App.config
+            MySqlConnection con = new MySqlConnection();
+            con.ConnectionString = ConfigurationManager.ConnectionStrings["namakoneksi"].ConnectionString;
+
+            return con.Database;
+        }
+
         #endregion
 
     }

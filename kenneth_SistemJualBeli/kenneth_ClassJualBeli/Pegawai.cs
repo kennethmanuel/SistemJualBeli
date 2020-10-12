@@ -49,6 +49,7 @@ namespace kenneth_ClassJualBeli
             string sql = "INSERT INTO pegawai(kodepegawai, nama, tgllahir, alamat, gaji, username, password) VALUES('" + p.KodePegawai + "', '" + p.Nama + "', '" + p.TanggalLahir + "', '" + p.Alamat + "', '" + p.Gaji + "', '" + p.Username + "', '" + p.Password + "')";
 
             Koneksi.JalankanPerintahDML(sql);
+            ManajemenUser(p);
         }
 
         public static void UbahData(Pegawai p)
@@ -114,6 +115,30 @@ namespace kenneth_ClassJualBeli
             }
 
             return hasilKode;
+        }
+
+        public static void BuatUserBaru(Pegawai pPegawai, string pNamaServer)
+        {
+            string sql = "CREATE USER '" + pPegawai.Username + "'@'" + pNamaServer + "' IDENTIFIED BY '" + pPegawai.Password;
+
+            Koneksi.JalankanPerintahDML(sql);
+        }
+
+        public static void BeriHakAkses(Pegawai pPegawai, string pNamaServer, string pNamaDatabase)
+        {
+            string sql = "GRANT ALL PRIVILEGES ON " + pNamaDatabase + ".* TO '" + pPegawai.Username + "'@'" + pNamaServer + "'";
+
+            Koneksi.JalankanPerintahDML(sql);
+        }
+
+        public static void ManajemenUser(Pegawai p)
+        {
+            string namaServer = Koneksi.GetNamaServer();
+            string namaDatabase = Koneksi.GetNamaDatabase();
+
+            Pegawai.BuatUserBaru(p, namaServer);
+            Pegawai.BeriHakAkses(p, namaServer, namaDatabase);
+
         }
         #endregion
     }

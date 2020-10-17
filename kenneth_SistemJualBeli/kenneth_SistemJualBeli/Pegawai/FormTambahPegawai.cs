@@ -14,6 +14,8 @@ namespace kenneth_SistemJualBeli
     public partial class FormTambahPegawai : Form
     {
         List<Jabatan> listJabatan = new List<Jabatan>();
+        List<Pegawai> listPegawai = new List<Pegawai>();
+
         public FormTambahPegawai()
         {
             InitializeComponent();
@@ -22,6 +24,9 @@ namespace kenneth_SistemJualBeli
         private void FormTambahPegawai_Load(object sender, EventArgs e)
         {
             listJabatan = Jabatan.BacaData("", "");
+
+            comboBoxJabatan.DataSource = listJabatan;
+            comboBoxJabatan.DisplayMember = "Nama";
 
             try
             {
@@ -52,6 +57,22 @@ namespace kenneth_SistemJualBeli
             {
                 MessageBox.Show("Data pegawai gagal ditambahkan. Pesan kesalahan:" + ex.Message, "Kesalahan");
             }
+        }
+
+        private void textBoxKodePegawai_TextChanged(object sender, EventArgs e)
+        {
+            listPegawai = Pegawai.BacaData("KodePegawai", textBoxKodePegawai.Text);
+
+            if(listPegawai.Count > 0)
+            {
+                textBoxKodePegawai.Text = listPegawai[0].Nama;
+                dateTimePickerTanggalLahir.Value = listPegawai[0].TanggalLahir;
+                textBoxAlamat.Text = listPegawai[0].Alamat;
+                textBoxGaji.Text = listPegawai[0].Gaji.ToString();
+                textBoxUsername.Text = listPegawai[0].Username;
+            }
+            
+
         }
     }
 }

@@ -46,10 +46,10 @@ namespace kenneth_ClassJualBeli
         #region methods
         public static void TambahData(Pegawai p)
         {
-            string sql = "INSERT INTO pegawai(kodepegawai, nama, tgllahir, alamat, gaji, username, password) VALUES('" + p.KodePegawai + "', '" + p.Nama + "', '" + p.TanggalLahir.ToString("yyyy-MM-dd") + "', '" + p.Alamat + "', '" + p.Gaji + "', '" + p.Username + "', '" + p.Password + "','" + p.Jabatan.IdJabatan + "')";
+            string sql = "INSERT INTO pegawai(kodepegawai, nama, tgllahir, alamat, gaji, username, password, idjabatan) VALUES('" + p.KodePegawai + "', '" + p.Nama + "', '" + p.TanggalLahir.ToString("yyyy-MM-dd") + "', '" + p.Alamat + "', '" + p.Gaji + "', '" + p.Username + "', '" + p.Password + "','" + p.Jabatan.IdJabatan + "')";
 
             Koneksi.JalankanPerintahDML(sql);
-            ManajemenUser(p);
+            //ManajemenUser(p);
         }
 
         public static void UbahData(Pegawai p)
@@ -117,6 +117,7 @@ namespace kenneth_ClassJualBeli
             return hasilKode;
         }
 
+        // USER BARU
         public static void BuatUserBaru(Pegawai pPegawai, string pNamaServer)
         {
             string sql = "CREATE USER '" + pPegawai.Username + "'@'" + pNamaServer + "' IDENTIFIED BY '" + pPegawai.Password;
@@ -138,7 +139,13 @@ namespace kenneth_ClassJualBeli
 
             Pegawai.BuatUserBaru(p, namaServer);
             Pegawai.BeriHakAkses(p, namaServer, namaDatabase);
+        }
 
+        public static void UbahPasswordUser(Pegawai pPegawai, string pNamaServer)
+        {
+            string sql = "SET PASSWORD FOR '" + pPegawai.username + "'@'" + pNamaServer + "=PASSWORD('" + pPegawai.Password + "')";
+
+            Koneksi.JalankanPerintahDML(sql);
         }
         #endregion
     }

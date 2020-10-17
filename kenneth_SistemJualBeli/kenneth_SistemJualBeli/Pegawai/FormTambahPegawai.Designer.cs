@@ -160,6 +160,7 @@
             this.textBoxKodePegawai.Name = "textBoxKodePegawai";
             this.textBoxKodePegawai.Size = new System.Drawing.Size(282, 32);
             this.textBoxKodePegawai.TabIndex = 4;
+            this.textBoxKodePegawai.TextChanged += new System.EventHandler(this.textBoxKodePegawai_TextChanged);
             // 
             // label3
             // 

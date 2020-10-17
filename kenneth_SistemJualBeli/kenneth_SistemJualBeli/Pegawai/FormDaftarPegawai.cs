@@ -54,6 +54,24 @@ namespace kenneth_SistemJualBeli
             dataGridViewPegawai.Columns.Add("Gaji", "Gaji");
             dataGridViewPegawai.Columns.Add("Username", "Username");
             dataGridViewPegawai.Columns.Add("Jabatan", "Jabatan");
+
+            dataGridViewPegawai.Columns["KodePegawai"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewPegawai.Columns["Nama"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewPegawai.Columns["TglLahir"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewPegawai.Columns["Alamat"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewPegawai.Columns["Gaji"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewPegawai.Columns["Username"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewPegawai.Columns["Jabatan"].AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+
+            dataGridViewPegawai.Columns["Gaji"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleRight;
+
+            dataGridViewPegawai.Columns["Gaji"].DefaultCellStyle.Format
+                 = "#,###";
+
+
+            dataGridViewPegawai.AllowUserToAddRows = false;
+
+            dataGridViewPegawai.ReadOnly = true;
         }
 
         private void TampilDataGrid()
@@ -63,7 +81,7 @@ namespace kenneth_SistemJualBeli
                 dataGridViewPegawai.Rows.Clear();
                 foreach (Pegawai p in listPegawai)
                 {
-                    dataGridViewPegawai.Rows.Add(p.KodePegawai, p.Nama, p.TanggalLahir.ToString(), p.Alamat, p.Gaji, p.Username, p.Jabatan.Nama);
+                    dataGridViewPegawai.Rows.Add(p.KodePegawai, p.Nama, p.TanggalLahir.ToShortDateString(), p.Alamat, p.Gaji, p.Username, p.Jabatan.Nama);
                 }
             }
             else

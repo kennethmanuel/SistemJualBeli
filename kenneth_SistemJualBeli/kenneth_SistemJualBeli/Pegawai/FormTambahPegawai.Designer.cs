@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.buttonKosongi = new System.Windows.Forms.Button();
             this.textBoxUsername = new System.Windows.Forms.TextBox();
-            this.textBoxHargaJual = new System.Windows.Forms.TextBox();
-            this.comboBoxKategori = new System.Windows.Forms.ComboBox();
+            this.textBoxGaji = new System.Windows.Forms.TextBox();
+            this.comboBoxJabatan = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -48,7 +48,7 @@
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePickerTanggalLahir = new System.Windows.Forms.DateTimePicker();
             this.buttonKeluar = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -86,23 +86,23 @@
             this.textBoxUsername.Size = new System.Drawing.Size(282, 32);
             this.textBoxUsername.TabIndex = 12;
             // 
-            // textBoxHargaJual
+            // textBoxGaji
             // 
-            this.textBoxHargaJual.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxHargaJual.Location = new System.Drawing.Point(215, 261);
-            this.textBoxHargaJual.Name = "textBoxHargaJual";
-            this.textBoxHargaJual.Size = new System.Drawing.Size(282, 32);
-            this.textBoxHargaJual.TabIndex = 11;
+            this.textBoxGaji.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxGaji.Location = new System.Drawing.Point(215, 261);
+            this.textBoxGaji.Name = "textBoxGaji";
+            this.textBoxGaji.Size = new System.Drawing.Size(282, 32);
+            this.textBoxGaji.TabIndex = 11;
             // 
-            // comboBoxKategori
+            // comboBoxJabatan
             // 
-            this.comboBoxKategori.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxKategori.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.comboBoxKategori.FormattingEnabled = true;
-            this.comboBoxKategori.Location = new System.Drawing.Point(215, 452);
-            this.comboBoxKategori.Name = "comboBoxKategori";
-            this.comboBoxKategori.Size = new System.Drawing.Size(282, 32);
-            this.comboBoxKategori.TabIndex = 10;
+            this.comboBoxJabatan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxJabatan.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.comboBoxJabatan.FormattingEnabled = true;
+            this.comboBoxJabatan.Location = new System.Drawing.Point(215, 452);
+            this.comboBoxJabatan.Name = "comboBoxJabatan";
+            this.comboBoxJabatan.Size = new System.Drawing.Size(282, 32);
+            this.comboBoxJabatan.TabIndex = 10;
             // 
             // label7
             // 
@@ -199,10 +199,10 @@
             this.panel1.Controls.Add(this.textBoxPassword);
             this.panel1.Controls.Add(this.label9);
             this.panel1.Controls.Add(this.label8);
-            this.panel1.Controls.Add(this.dateTimePicker1);
-            this.panel1.Controls.Add(this.comboBoxKategori);
+            this.panel1.Controls.Add(this.dateTimePickerTanggalLahir);
+            this.panel1.Controls.Add(this.comboBoxJabatan);
             this.panel1.Controls.Add(this.textBoxUsername);
-            this.panel1.Controls.Add(this.textBoxHargaJual);
+            this.panel1.Controls.Add(this.textBoxGaji);
             this.panel1.Controls.Add(this.label7);
             this.panel1.Controls.Add(this.label6);
             this.panel1.Controls.Add(this.label5);
@@ -263,14 +263,14 @@
             this.label8.TabIndex = 14;
             this.label8.Text = "Password:";
             // 
-            // dateTimePicker1
+            // dateTimePickerTanggalLahir
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Tahoma", 12F);
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(215, 128);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 32);
-            this.dateTimePicker1.TabIndex = 13;
+            this.dateTimePickerTanggalLahir.Font = new System.Drawing.Font("Tahoma", 12F);
+            this.dateTimePickerTanggalLahir.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerTanggalLahir.Location = new System.Drawing.Point(215, 128);
+            this.dateTimePickerTanggalLahir.Name = "dateTimePickerTanggalLahir";
+            this.dateTimePickerTanggalLahir.Size = new System.Drawing.Size(200, 32);
+            this.dateTimePickerTanggalLahir.TabIndex = 13;
             // 
             // buttonKeluar
             // 
@@ -295,6 +295,7 @@
             this.buttonTambah.TabIndex = 41;
             this.buttonTambah.Text = "TAMBAH";
             this.buttonTambah.UseVisualStyleBackColor = false;
+            this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
             // FormTambahPegawai
             // 
@@ -321,8 +322,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonKosongi;
         private System.Windows.Forms.TextBox textBoxUsername;
-        private System.Windows.Forms.TextBox textBoxHargaJual;
-        private System.Windows.Forms.ComboBox comboBoxKategori;
+        private System.Windows.Forms.TextBox textBoxGaji;
+        private System.Windows.Forms.ComboBox comboBoxJabatan;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
@@ -335,7 +336,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button buttonKeluar;
         private System.Windows.Forms.Button buttonTambah;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerTanggalLahir;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox textBoxUlangPassword;
         private System.Windows.Forms.TextBox textBoxPassword;

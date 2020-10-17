@@ -46,7 +46,7 @@ namespace kenneth_ClassJualBeli
         #region methods
         public static void TambahData(Pegawai p)
         {
-            string sql = "INSERT INTO pegawai(kodepegawai, nama, tgllahir, alamat, gaji, username, password) VALUES('" + p.KodePegawai + "', '" + p.Nama + "', '" + p.TanggalLahir + "', '" + p.Alamat + "', '" + p.Gaji + "', '" + p.Username + "', '" + p.Password + "')";
+            string sql = "INSERT INTO pegawai(kodepegawai, nama, tgllahir, alamat, gaji, username, password) VALUES('" + p.KodePegawai + "', '" + p.Nama + "', '" + p.TanggalLahir.ToString("yyyy-MM-dd") + "', '" + p.Alamat + "', '" + p.Gaji + "', '" + p.Username + "', '" + p.Password + "','" + p.Jabatan.IdJabatan + "')";
 
             Koneksi.JalankanPerintahDML(sql);
             ManajemenUser(p);
@@ -54,7 +54,7 @@ namespace kenneth_ClassJualBeli
 
         public static void UbahData(Pegawai p)
         {
-            string sql = "UPDATE pegawai SET nama='" + p.Nama + "', tgllahir='" + p.TanggalLahir + "', alamat='" + p.Alamat + "', gaji='" + p.Gaji + "', username='" + p.Username + "', password='" + p.Password + "' WHERE p.KodePegawai='" + p.KodePegawai + "'";
+            string sql = "UPDATE pegawai SET nama='" + p.Nama.Replace("'", "\\'") + "', tgllahir='" + p.TanggalLahir + "', alamat='" + p.Alamat + "', gaji='" + p.Gaji + "', username='" + p.Username + "', password='" + p.Password + "' WHERE p.KodePegawai='" + p.KodePegawai + "'";
 
             Koneksi.JalankanPerintahDML(sql);
         }

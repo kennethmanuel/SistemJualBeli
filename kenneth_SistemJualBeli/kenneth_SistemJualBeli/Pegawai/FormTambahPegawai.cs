@@ -13,6 +13,7 @@ namespace kenneth_SistemJualBeli
 {
     public partial class FormTambahPegawai : Form
     {
+        List<Jabatan> listJabatan = new List<Jabatan>();
         public FormTambahPegawai()
         {
             InitializeComponent();
@@ -20,10 +21,37 @@ namespace kenneth_SistemJualBeli
 
         private void FormTambahPegawai_Load(object sender, EventArgs e)
         {
-            string kodeBaru = Pegawai.GenerateCode().ToString();
+            listJabatan = Jabatan.BacaData("", "");
 
-            textBoxKodePegawai.Text = kodeBaru;
-            textBoxNamaPegawai.Focus();
+            try
+            {
+                string kodeBaru = Pegawai.GenerateCode().ToString();
+                textBoxKodePegawai.Text = kodeBaru;
+                textBoxNamaPegawai.Focus();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Gagal melakukan generate code. Pesan kesalahan:" + ex.Message);
+            }
+        }
+
+        private void buttonTambah_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                Jabatan selectedJabatan = (Jabatan)comboBoxJabatan.SelectedItem;
+
+                Pegawai p = new Pegawai(int.Parse(textBoxKodePegawai.Text), textBoxNamaPegawai.Text, dateTimePickerTanggalLahir.Value, textBoxAlamat.Text, int.Parse(textBoxGaji.Text), textBoxUsername.Text, textBoxPassword.Text, selectedJabatan);
+
+                Pegawai.TambahData(p);
+
+                MessageBox.Show("Data pegawai berhasil ditambahkan", "Info");
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Data pegawai gagal ditambahkan. Pesan kesalahan:" + ex.Message, "Kesalahan");
+            }
         }
     }
 }

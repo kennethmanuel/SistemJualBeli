@@ -155,6 +155,7 @@
             this.Controls.Add(this.buttonHapus);
             this.Name = "FormHapusKategori";
             this.Text = "FormHapusKategori";
+            this.Load += new System.EventHandler(this.FormHapusKategori_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);

@@ -49,14 +49,17 @@ namespace kenneth_ClassJualBeli
             string sql = "INSERT INTO pegawai(kodepegawai, nama, tgllahir, alamat, gaji, username, password, idjabatan) VALUES('" + p.KodePegawai + "', '" + p.Nama + "', '" + p.TanggalLahir.ToString("yyyy-MM-dd") + "', '" + p.Alamat + "', '" + p.Gaji + "', '" + p.Username + "', '" + p.Password + "','" + p.Jabatan.IdJabatan + "')";
 
             Koneksi.JalankanPerintahDML(sql);
-            //ManajemenUser(p);
+            ManajemenUser(p);
         }
 
         public static void UbahData(Pegawai p)
         {
-            string sql = "UPDATE pegawai SET nama='" + p.Nama.Replace("'", "\\'") + "', tgllahir='" + p.TanggalLahir + "', alamat='" + p.Alamat + "', gaji='" + p.Gaji + "', username='" + p.Username + "', password='" + p.Password + "' WHERE p.KodePegawai='" + p.KodePegawai + "'";
+            string sql = "UPDATE pegawai SET nama='" + p.Nama.Replace("'", "\\'") + "', tgllahir='" + p.TanggalLahir.ToString("yyyy-MM-dd") + "', alamat='" + p.Alamat + "', gaji='" + p.Gaji + "', username='" + p.Username + "', password='" + p.Password + "' WHERE KodePegawai='" + p.KodePegawai + "'";
 
             Koneksi.JalankanPerintahDML(sql);
+
+            string serverName = Koneksi.GetNamaServer();
+            UbahPasswordUser(p, serverName);
         }
 
         public static void HapusData(Pegawai p)
@@ -64,6 +67,8 @@ namespace kenneth_ClassJualBeli
             string sql = "DELETE FROM pegawai WHERE kodepegawai='" + p.KodePegawai + "'";
 
             Koneksi.JalankanPerintahDML(sql);
+            string serverName = Koneksi.GetNamaServer();
+            HapusUser(p, serverName);
         }
 
         public static List<Pegawai> BacaData(string kriteria, string nilaiKriteria)
@@ -120,7 +125,7 @@ namespace kenneth_ClassJualBeli
         // USER BARU
         public static void BuatUserBaru(Pegawai pPegawai, string pNamaServer)
         {
-            string sql = "CREATE USER '" + pPegawai.Username + "'@'" + pNamaServer + "' IDENTIFIED BY '" + pPegawai.Password;
+            string sql = "CREATE USER '" + pPegawai.Username + "'@'" + pNamaServer + "' IDENTIFIED BY '" + pPegawai.Password + "'";
 
             Koneksi.JalankanPerintahDML(sql);
         }
@@ -143,8 +148,14 @@ namespace kenneth_ClassJualBeli
 
         public static void UbahPasswordUser(Pegawai pPegawai, string pNamaServer)
         {
-            string sql = "SET PASSWORD FOR '" + pPegawai.username + "'@'" + pNamaServer + "=PASSWORD('" + pPegawai.Password + "')";
+            string sql = "SET PASSWORD FOR '" + pPegawai.Username + "'@'" + pNamaServer + "'=PASSWORD('" + pPegawai.Password + "')";
 
+            Koneksi.JalankanPerintahDML(sql);
+        }
+
+        public static void HapusUser(Pegawai pPegawai, string pNamaServer)
+        {
+            string sql = "DROP USER '" + pPegawai.Username + "'@'" + pNamaServer + "'";
             Koneksi.JalankanPerintahDML(sql);
         }
         #endregion

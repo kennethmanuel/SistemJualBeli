@@ -113,6 +113,7 @@
             // 
             // textBoxUsername
             // 
+            this.textBoxUsername.Enabled = false;
             this.textBoxUsername.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxUsername.Location = new System.Drawing.Point(215, 306);
             this.textBoxUsername.Name = "textBoxUsername";
@@ -216,6 +217,7 @@
             this.textBoxKodePegawai.Name = "textBoxKodePegawai";
             this.textBoxKodePegawai.Size = new System.Drawing.Size(282, 32);
             this.textBoxKodePegawai.TabIndex = 4;
+            this.textBoxKodePegawai.TextChanged += new System.EventHandler(this.textBoxKodePegawai_TextChanged);
             // 
             // label3
             // 

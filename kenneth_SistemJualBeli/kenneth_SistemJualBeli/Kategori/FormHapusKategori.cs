@@ -72,5 +72,10 @@ namespace kenneth_SistemJualBeli
             formDaftarKategori.FormDaftarKategori_Load(buttonKeluar, e);
             this.Close();
         }
+
+        private void FormHapusKategori_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

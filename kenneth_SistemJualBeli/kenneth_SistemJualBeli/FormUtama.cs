@@ -7,8 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using kenneth_ClassJualBeli; //reference yang digunakan sehingga dapat menggunakan class-class yang ada di kenneth_ClassJualBeli
 
+//reference yang digunakan sehingga dapat menggunakan class-class yang ada di kenneth_ClassJualBeli
+using kenneth_ClassJualBeli; 
 namespace kenneth_SistemJualBeli
 {
     public partial class FormUtama : Form
@@ -152,5 +153,43 @@ namespace kenneth_SistemJualBeli
                 checkForm.BringToFront();
             }
         }
+
+        public void PengaturanHakAksesMenu(Jabatan j)
+        {
+            // (Pegawai Pembelian)
+            if(j.IdJabatan == "J1")
+            {
+                pembelianToolStripMenuItem.Visible = true;
+                laporanPembelianToolStripMenuItem.Visible = true;
+
+                masterToolStripMenuItem.Visible = false;
+                laporanMasterToolStripMenuItem.Visible = false;
+                penjualanToolStripMenuItem.Visible = false;
+                laporanPenjualanToolStripMenuItem.Visible = false;
+            }
+            // (Kasir)
+            else if (j.IdJabatan == "J2")
+            {
+                penjualanToolStripMenuItem.Visible = true;
+                laporanPenjualanToolStripMenuItem.Visible = true;
+
+                masterToolStripMenuItem.Visible = false;
+                laporanMasterToolStripMenuItem.Visible = false;
+                pembelianToolStripMenuItem.Visible = false;
+                laporanPembelianToolStripMenuItem.Visible = false;
+            } 
+            // (Manager)
+            else if(j.IdJabatan == "J3")
+            {
+                penjualanToolStripMenuItem.Visible = true;
+                laporanPenjualanToolStripMenuItem.Visible = true;
+                masterToolStripMenuItem.Visible = true;
+                laporanMasterToolStripMenuItem.Visible = true;
+                pembelianToolStripMenuItem.Visible = true;
+                laporanPembelianToolStripMenuItem.Visible = true;
+            }
+
+        }
     }
+
 }

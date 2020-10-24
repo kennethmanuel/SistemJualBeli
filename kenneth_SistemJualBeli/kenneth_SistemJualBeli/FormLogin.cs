@@ -13,6 +13,8 @@ namespace kenneth_SistemJualBeli
 {
     public partial class FormLogin : Form
     {
+        List<Pegawai> listPegawai = new List<Pegawai>();
+        
         public FormLogin()
         {
             InitializeComponent();
@@ -21,6 +23,8 @@ namespace kenneth_SistemJualBeli
         private void FormLogin_Load(object sender, EventArgs e)
         {
             this.Height = panelLogin.Height + 50;
+
+            // For convinience
             textBoxServer.Text = "localhost";
             textBoxDatabase.Text = "si_jual_beli";
             textBoxUsername.Text = "andrew";
@@ -73,10 +77,27 @@ namespace kenneth_SistemJualBeli
                     //uji coba create objek bertipe Koneksi menggunakan default constructor
                     Koneksi koneksi2 = new Koneksi();
 
-                    MessageBox.Show("Koneksi berhasil. Selamat menggunakan aplikasi.", "Informasi");
-
+                    // Enable FormUtama
                     this.Owner.Enabled = true;
-                    //formMenu.Enabled = true;
+
+                    listPegawai = Pegawai.BacaData("username", textBoxUsername.Text);
+                    if(listPegawai.Count > 0)
+                    {
+                        FormUtama formUtama = (FormUtama)this.Owner;
+                        formUtama.labelKodePegawai.Text = listPegawai[0].KodePegawai.ToString();
+                        formUtama.labelNamaPegawai.Text = listPegawai[0].Nama;
+                        formUtama.labelJabatan.Text = listPegawai[0].Jabatan.Nama;
+
+                        formUtama.PengaturanHakAksesMenu(listPegawai[0].Jabatan);
+
+                        MessageBox.Show("Koneksi berhasil. Selamat menggunakan aplikasi.", "Informasi");
+
+                        this.Close();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Username tidak ditemukan");
+                    }
 
                     this.Close();
                 }

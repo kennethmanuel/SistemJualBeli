@@ -87,19 +87,19 @@
             // keluarSistemToolStripMenuItem
             // 
             this.keluarSistemToolStripMenuItem.Name = "keluarSistemToolStripMenuItem";
-            this.keluarSistemToolStripMenuItem.Size = new System.Drawing.Size(113, 24);
+            this.keluarSistemToolStripMenuItem.Size = new System.Drawing.Size(113, 26);
             this.keluarSistemToolStripMenuItem.Text = "Keluar Sistem";
             // 
             // laporanPembelianToolStripMenuItem
             // 
             this.laporanPembelianToolStripMenuItem.Name = "laporanPembelianToolStripMenuItem";
-            this.laporanPembelianToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.laporanPembelianToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.laporanPembelianToolStripMenuItem.Text = "Pembelian";
             // 
             // laporanPenjualanToolStripMenuItem
             // 
             this.laporanPenjualanToolStripMenuItem.Name = "laporanPenjualanToolStripMenuItem";
-            this.laporanPenjualanToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.laporanPenjualanToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.laporanPenjualanToolStripMenuItem.Text = "Penjualan";
             // 
             // laporanTransaksiToolStripMenuItem1
@@ -108,31 +108,31 @@
             this.laporanPenjualanToolStripMenuItem,
             this.laporanPembelianToolStripMenuItem});
             this.laporanTransaksiToolStripMenuItem1.Name = "laporanTransaksiToolStripMenuItem1";
-            this.laporanTransaksiToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.laporanTransaksiToolStripMenuItem1.Size = new System.Drawing.Size(151, 26);
             this.laporanTransaksiToolStripMenuItem1.Text = "Transaksi";
             // 
             // supplierToolStripMenuItem1
             // 
             this.supplierToolStripMenuItem1.Name = "supplierToolStripMenuItem1";
-            this.supplierToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.supplierToolStripMenuItem1.Size = new System.Drawing.Size(161, 26);
             this.supplierToolStripMenuItem1.Text = "Supplier";
             // 
             // pelangganToolStripMenuItem1
             // 
             this.pelangganToolStripMenuItem1.Name = "pelangganToolStripMenuItem1";
-            this.pelangganToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.pelangganToolStripMenuItem1.Size = new System.Drawing.Size(161, 26);
             this.pelangganToolStripMenuItem1.Text = "Pelanggan";
             // 
             // pegawaiToolStripMenuItem
             // 
             this.pegawaiToolStripMenuItem.Name = "pegawaiToolStripMenuItem";
-            this.pegawaiToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.pegawaiToolStripMenuItem.Size = new System.Drawing.Size(161, 26);
             this.pegawaiToolStripMenuItem.Text = "Pegawai";
             // 
             // barangToolStripMenuItem1
             // 
             this.barangToolStripMenuItem1.Name = "barangToolStripMenuItem1";
-            this.barangToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.barangToolStripMenuItem1.Size = new System.Drawing.Size(161, 26);
             this.barangToolStripMenuItem1.Text = "Barang";
             // 
             // label3
@@ -147,7 +147,7 @@
             // kategoriToolStripMenuItem1
             // 
             this.kategoriToolStripMenuItem1.Name = "kategoriToolStripMenuItem1";
-            this.kategoriToolStripMenuItem1.Size = new System.Drawing.Size(224, 26);
+            this.kategoriToolStripMenuItem1.Size = new System.Drawing.Size(161, 26);
             this.kategoriToolStripMenuItem1.Text = "Kategori";
             // 
             // laporanToolStripMenuItem
@@ -156,7 +156,7 @@
             this.laporanMasterToolStripMenuItem,
             this.laporanTransaksiToolStripMenuItem1});
             this.laporanToolStripMenuItem.Name = "laporanToolStripMenuItem";
-            this.laporanToolStripMenuItem.Size = new System.Drawing.Size(77, 24);
+            this.laporanToolStripMenuItem.Size = new System.Drawing.Size(77, 26);
             this.laporanToolStripMenuItem.Text = "Laporan";
             // 
             // laporanMasterToolStripMenuItem
@@ -168,7 +168,7 @@
             this.pelangganToolStripMenuItem1,
             this.supplierToolStripMenuItem1});
             this.laporanMasterToolStripMenuItem.Name = "laporanMasterToolStripMenuItem";
-            this.laporanMasterToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.laporanMasterToolStripMenuItem.Size = new System.Drawing.Size(151, 26);
             this.laporanMasterToolStripMenuItem.Text = "Master";
             // 
             // pembelianToolStripMenuItem
@@ -191,7 +191,7 @@
             this.penjualanToolStripMenuItem,
             this.pembelianToolStripMenuItem});
             this.transaksiToolStripMenuItem.Name = "transaksiToolStripMenuItem";
-            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(82, 24);
+            this.transaksiToolStripMenuItem.Size = new System.Drawing.Size(82, 26);
             this.transaksiToolStripMenuItem.Text = "Transaksi";
             // 
             // supplierToolStripMenuItem
@@ -238,7 +238,7 @@
             this.pelangganToolStripMenuItem,
             this.supplierToolStripMenuItem});
             this.masterToolStripMenuItem.Name = "masterToolStripMenuItem";
-            this.masterToolStripMenuItem.Size = new System.Drawing.Size(68, 24);
+            this.masterToolStripMenuItem.Size = new System.Drawing.Size(68, 26);
             this.masterToolStripMenuItem.Text = "Master";
             // 
             // menuStrip1
@@ -251,7 +251,7 @@
             this.keluarSistemToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(978, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(978, 30);
             this.menuStrip1.TabIndex = 5;
             this.menuStrip1.Text = "menuStrip1";
             // 

@@ -99,6 +99,21 @@ namespace kenneth_ClassJualBeli
             }
             return listHasil;
         }
+
+        // Update stok barang setelah terjadi transaksi pembelian atau penjualan
+        public static void UpdateStok(string jenisTransaksi, string kodeBarang, int jumlahBarang)
+        {
+            string sql = "";
+            if(jenisTransaksi == "penjualan")
+            {
+                sql = "UPDATE barang SET stok=stok-" + jumlahBarang + " WHERE kodebarang = '" + kodeBarang + "'";
+            }
+            else if(jenisTransaksi == "pembelian")
+            {
+                sql = "UPDATE barang SET stok=stok+" + jumlahBarang + " WHERE kodebarang = '" + kodeBarang + "'";
+            }
+            Koneksi.JalankanPerintahDML(sql);
+        }
         #endregion
 
     }

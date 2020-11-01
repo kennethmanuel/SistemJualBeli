@@ -10,7 +10,7 @@
   <Class Name="kenneth_ClassJualBeli.Barang">
     <Position X="3" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>ACAAAQAAAAEAACAIAAAgQABAIEAAQCAAAAQAAAAgAAA=</HashCode>
+      <HashCode>ACAAAQAAAAEAAKAIAAAgQABAIEAAQCAAAAQAAAAgAAA=</HashCode>
       <FileName>Barang.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -20,7 +20,7 @@
   <Class Name="kenneth_ClassJualBeli.NotaJualDetil">
     <Position X="3" Y="5.25" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAQgAAAEIAAAAAAEAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAQgAAAEIAQAAAAEAAAAAAAA=</HashCode>
       <FileName>NotaJualDetil.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -37,7 +37,7 @@
   <Class Name="kenneth_ClassJualBeli.Pegawai">
     <Position X="7.75" Y="5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAABAAAAAQAAAEAAgQAAQIEAAMAAAQKCAAQCAgAAAQA=</HashCode>
+      <HashCode>AAABAAAAARgAAMAIgQAASIEAAcAAAQKCAAQDAgBAAQA=</HashCode>
       <FileName>Pegawai.cs</FileName>
     </TypeIdentifier>
     <ShowAsAssociation>
@@ -47,7 +47,7 @@
   <Class Name="kenneth_ClassJualBeli.Jabatan">
     <Position X="5.25" Y="6.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>CAAAAAgAAAAAAAAAAAAAQAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>CAAAAAgAAAAAAIAAAAAAQAAAAEAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Jabatan.cs</FileName>
     </TypeIdentifier>
   </Class>

@@ -90,6 +90,8 @@ namespace kenneth_SistemJualBeli
 
                         formUtama.PengaturanHakAksesMenu(listPegawai[0].Jabatan);
 
+                        formUtama.pegawaiLogin = listPegawai[0];
+
                         MessageBox.Show("Koneksi berhasil. Selamat menggunakan aplikasi.", "Informasi");
 
                         this.Close();

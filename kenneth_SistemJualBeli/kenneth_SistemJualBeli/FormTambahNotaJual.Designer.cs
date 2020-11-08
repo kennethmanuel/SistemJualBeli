@@ -30,6 +30,13 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelHargaBarang = new System.Windows.Forms.Label();
+            this.labelNamaBarang = new System.Windows.Forms.Label();
+            this.labelKodeBarang = new System.Windows.Forms.Label();
+            this.textBoxJumlah = new System.Windows.Forms.TextBox();
+            this.textBoxBarcode = new System.Windows.Forms.TextBox();
+            this.labelNamaPegawai = new System.Windows.Forms.Label();
+            this.labelAlamat = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -45,19 +52,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.textBoxNoNota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewBarang = new System.Windows.Forms.DataGridView();
             this.buttonKeluar = new System.Windows.Forms.Button();
             this.buttonCetak = new System.Windows.Forms.Button();
             this.buttonSimpan = new System.Windows.Forms.Button();
-            this.labelAlamat = new System.Windows.Forms.Label();
-            this.labelNamaPegawai = new System.Windows.Forms.Label();
-            this.textBoxBarcode = new System.Windows.Forms.TextBox();
-            this.textBoxJumlah = new System.Windows.Forms.TextBox();
-            this.labelKodeBarang = new System.Windows.Forms.Label();
-            this.labelNamaBarang = new System.Windows.Forms.Label();
-            this.labelHargaBarang = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBarang)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -101,6 +101,70 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(825, 270);
             this.panel1.TabIndex = 41;
+            // 
+            // labelHargaBarang
+            // 
+            this.labelHargaBarang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelHargaBarang.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelHargaBarang.Location = new System.Drawing.Point(561, 236);
+            this.labelHargaBarang.Name = "labelHargaBarang";
+            this.labelHargaBarang.Size = new System.Drawing.Size(134, 28);
+            this.labelHargaBarang.TabIndex = 24;
+            // 
+            // labelNamaBarang
+            // 
+            this.labelNamaBarang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelNamaBarang.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelNamaBarang.Location = new System.Drawing.Point(319, 236);
+            this.labelNamaBarang.Name = "labelNamaBarang";
+            this.labelNamaBarang.Size = new System.Drawing.Size(236, 28);
+            this.labelNamaBarang.TabIndex = 23;
+            // 
+            // labelKodeBarang
+            // 
+            this.labelKodeBarang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelKodeBarang.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelKodeBarang.Location = new System.Drawing.Point(151, 236);
+            this.labelKodeBarang.Name = "labelKodeBarang";
+            this.labelKodeBarang.Size = new System.Drawing.Size(162, 28);
+            this.labelKodeBarang.TabIndex = 22;
+            // 
+            // textBoxJumlah
+            // 
+            this.textBoxJumlah.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.textBoxJumlah.Location = new System.Drawing.Point(701, 236);
+            this.textBoxJumlah.Name = "textBoxJumlah";
+            this.textBoxJumlah.Size = new System.Drawing.Size(111, 28);
+            this.textBoxJumlah.TabIndex = 21;
+            this.textBoxJumlah.KeyDown += new System.Windows.Forms.KeyEventHandler(this.textBoxJumlah_KeyDown);
+            // 
+            // textBoxBarcode
+            // 
+            this.textBoxBarcode.Font = new System.Drawing.Font("Tahoma", 10F);
+            this.textBoxBarcode.Location = new System.Drawing.Point(12, 236);
+            this.textBoxBarcode.Name = "textBoxBarcode";
+            this.textBoxBarcode.Size = new System.Drawing.Size(133, 28);
+            this.textBoxBarcode.TabIndex = 17;
+            this.textBoxBarcode.TextChanged += new System.EventHandler(this.textBoxBarcode_TextChanged);
+            // 
+            // labelNamaPegawai
+            // 
+            this.labelNamaPegawai.AutoSize = true;
+            this.labelNamaPegawai.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelNamaPegawai.Location = new System.Drawing.Point(177, 124);
+            this.labelNamaPegawai.Name = "labelNamaPegawai";
+            this.labelNamaPegawai.Size = new System.Drawing.Size(136, 21);
+            this.labelNamaPegawai.TabIndex = 16;
+            this.labelNamaPegawai.Text = "Nama Pegawai";
+            // 
+            // labelAlamat
+            // 
+            this.labelAlamat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelAlamat.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
+            this.labelAlamat.Location = new System.Drawing.Point(591, 61);
+            this.labelAlamat.Name = "labelAlamat";
+            this.labelAlamat.Size = new System.Drawing.Size(221, 55);
+            this.labelAlamat.TabIndex = 15;
             // 
             // label12
             // 
@@ -255,15 +319,15 @@
             this.label2.TabIndex = 0;
             this.label2.Text = "No Nota:";
             // 
-            // dataGridView1
+            // dataGridViewBarang
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 354);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(825, 231);
-            this.dataGridView1.TabIndex = 42;
+            this.dataGridViewBarang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewBarang.Location = new System.Drawing.Point(12, 354);
+            this.dataGridViewBarang.Name = "dataGridViewBarang";
+            this.dataGridViewBarang.RowHeadersWidth = 51;
+            this.dataGridViewBarang.RowTemplate.Height = 24;
+            this.dataGridViewBarang.Size = new System.Drawing.Size(825, 231);
+            this.dataGridViewBarang.TabIndex = 42;
             // 
             // buttonKeluar
             // 
@@ -301,68 +365,7 @@
             this.buttonSimpan.TabIndex = 24;
             this.buttonSimpan.Text = "SIMPAN ";
             this.buttonSimpan.UseVisualStyleBackColor = false;
-            // 
-            // labelAlamat
-            // 
-            this.labelAlamat.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelAlamat.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelAlamat.Location = new System.Drawing.Point(591, 61);
-            this.labelAlamat.Name = "labelAlamat";
-            this.labelAlamat.Size = new System.Drawing.Size(221, 55);
-            this.labelAlamat.TabIndex = 15;
-            // 
-            // labelNamaPegawai
-            // 
-            this.labelNamaPegawai.AutoSize = true;
-            this.labelNamaPegawai.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelNamaPegawai.Location = new System.Drawing.Point(177, 124);
-            this.labelNamaPegawai.Name = "labelNamaPegawai";
-            this.labelNamaPegawai.Size = new System.Drawing.Size(136, 21);
-            this.labelNamaPegawai.TabIndex = 16;
-            this.labelNamaPegawai.Text = "Nama Pegawai";
-            // 
-            // textBoxBarcode
-            // 
-            this.textBoxBarcode.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.textBoxBarcode.Location = new System.Drawing.Point(12, 236);
-            this.textBoxBarcode.Name = "textBoxBarcode";
-            this.textBoxBarcode.Size = new System.Drawing.Size(133, 28);
-            this.textBoxBarcode.TabIndex = 17;
-            // 
-            // textBoxJumlah
-            // 
-            this.textBoxJumlah.Font = new System.Drawing.Font("Tahoma", 10F);
-            this.textBoxJumlah.Location = new System.Drawing.Point(701, 236);
-            this.textBoxJumlah.Name = "textBoxJumlah";
-            this.textBoxJumlah.Size = new System.Drawing.Size(111, 28);
-            this.textBoxJumlah.TabIndex = 21;
-            // 
-            // labelKodeBarang
-            // 
-            this.labelKodeBarang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelKodeBarang.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelKodeBarang.Location = new System.Drawing.Point(151, 236);
-            this.labelKodeBarang.Name = "labelKodeBarang";
-            this.labelKodeBarang.Size = new System.Drawing.Size(162, 28);
-            this.labelKodeBarang.TabIndex = 22;
-            // 
-            // labelNamaBarang
-            // 
-            this.labelNamaBarang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelNamaBarang.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelNamaBarang.Location = new System.Drawing.Point(319, 236);
-            this.labelNamaBarang.Name = "labelNamaBarang";
-            this.labelNamaBarang.Size = new System.Drawing.Size(236, 28);
-            this.labelNamaBarang.TabIndex = 23;
-            // 
-            // labelHargaBarang
-            // 
-            this.labelHargaBarang.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelHargaBarang.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
-            this.labelHargaBarang.Location = new System.Drawing.Point(561, 236);
-            this.labelHargaBarang.Name = "labelHargaBarang";
-            this.labelHargaBarang.Size = new System.Drawing.Size(134, 28);
-            this.labelHargaBarang.TabIndex = 24;
+            this.buttonSimpan.Click += new System.EventHandler(this.buttonSimpan_Click);
             // 
             // FormTambahNotaJual
             // 
@@ -373,7 +376,7 @@
             this.Controls.Add(this.buttonKeluar);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonCetak);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewBarang);
             this.Controls.Add(this.buttonSimpan);
             this.Controls.Add(this.label1);
             this.Name = "FormTambahNotaJual";
@@ -381,7 +384,7 @@
             this.Load += new System.EventHandler(this.FormTambahNotaJual_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewBarang)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -395,7 +398,7 @@
         private System.Windows.Forms.TextBox textBoxNoNota;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox comboBoxPelanggan;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewBarang;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label labelKodePegawai;

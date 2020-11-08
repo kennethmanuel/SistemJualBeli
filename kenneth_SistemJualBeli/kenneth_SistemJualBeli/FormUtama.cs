@@ -14,6 +14,8 @@ namespace kenneth_SistemJualBeli
 {
     public partial class FormUtama : Form
     {
+        public Pegawai pegawaiLogin;
+
         public FormUtama()
         {
             InitializeComponent();
@@ -188,6 +190,11 @@ namespace kenneth_SistemJualBeli
                 pembelianToolStripMenuItem.Visible = true;
                 laporanPembelianToolStripMenuItem.Visible = true;
             }
+
+        }
+
+        private void labelKodePegawai_Click(object sender, EventArgs e)
+        {
 
         }
     }

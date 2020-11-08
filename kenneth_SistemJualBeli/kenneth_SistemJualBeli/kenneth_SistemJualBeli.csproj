@@ -61,17 +61,23 @@
     <Compile Include="Kategori\FormDaftarKategori.Designer.cs">
       <DependentUpon>FormDaftarKategori.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDaftarNotaBeli.cs">
+    <Compile Include="Nota\FormDaftarNotaBeli.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDaftarNotaBeli.Designer.cs">
+    <Compile Include="Nota\FormDaftarNotaBeli.Designer.cs">
       <DependentUpon>FormDaftarNotaBeli.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormDaftarNotaJual.cs">
+    <Compile Include="Nota\FormDaftarNotaJual.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormDaftarNotaJual.Designer.cs">
+    <Compile Include="Nota\FormDaftarNotaJual.Designer.cs">
       <DependentUpon>FormDaftarNotaJual.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Nota\FormTambahNotaBeli.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Nota\FormTambahNotaBeli.Designer.cs">
+      <DependentUpon>FormTambahNotaBeli.cs</DependentUpon>
     </Compile>
     <Compile Include="Pegawai\FormDaftarPegawai.cs">
       <SubType>Form</SubType>
@@ -139,10 +145,10 @@
     <Compile Include="Kategori\FormTambahKategori.Designer.cs">
       <DependentUpon>FormTambahKategori.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTambahNotaJual.cs">
+    <Compile Include="Nota\FormTambahNotaJual.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTambahNotaJual.Designer.cs">
+    <Compile Include="Nota\FormTambahNotaJual.Designer.cs">
       <DependentUpon>FormTambahNotaJual.cs</DependentUpon>
     </Compile>
     <Compile Include="Pegawai\FormTambahPegawai.cs">
@@ -207,11 +213,14 @@
     <EmbeddedResource Include="Kategori\FormDaftarKategori.resx">
       <DependentUpon>FormDaftarKategori.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDaftarNotaBeli.resx">
+    <EmbeddedResource Include="Nota\FormDaftarNotaBeli.resx">
       <DependentUpon>FormDaftarNotaBeli.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormDaftarNotaJual.resx">
+    <EmbeddedResource Include="Nota\FormDaftarNotaJual.resx">
       <DependentUpon>FormDaftarNotaJual.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Nota\FormTambahNotaBeli.resx">
+      <DependentUpon>FormTambahNotaBeli.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pegawai\FormDaftarPegawai.resx">
       <DependentUpon>FormDaftarPegawai.cs</DependentUpon>
@@ -246,7 +255,7 @@
     <EmbeddedResource Include="Kategori\FormTambahKategori.resx">
       <DependentUpon>FormTambahKategori.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTambahNotaJual.resx">
+    <EmbeddedResource Include="Nota\FormTambahNotaJual.resx">
       <DependentUpon>FormTambahNotaJual.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pegawai\FormTambahPegawai.resx">

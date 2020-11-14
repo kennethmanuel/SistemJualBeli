@@ -78,6 +78,8 @@ namespace kenneth_ClassJualBeli
         {
             Koneksi k = new Koneksi();
 
+            k.Connect();
+
             MySqlCommand c = new MySqlCommand(sql, k.koneksiDB);
 
             c.ExecuteNonQuery();

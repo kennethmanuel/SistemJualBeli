@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
+using System.Transactions;
 
 namespace kenneth_ClassJualBeli
 {
@@ -45,19 +46,33 @@ namespace kenneth_ClassJualBeli
         // Menambah nota beli baru
         public static void TambahData(NotaBeli nota)
         {
-            string sql1 = "INSERT INTO notabeli(nonota, tanggal, kodesupplier, kodepegawai) VALUES ('" + nota.NoNota + "','" + nota.Tanggal.ToString("yyyy-MM-dd hh:mm:ss") + "','" + nota.Supplier.KodeSupplier + "','" + nota.Pegawai.KodePegawai + "')";
-
-            Koneksi.JalankanPerintahDML(sql1);
-
-            // Mendapatkan semua detil barang yang ada di nota beli
-            foreach (NotaBeliDetil detilNota in nota.ListNotaBeliDetil)
+            using (TransactionScope tScope = new TransactionScope())
             {
-                string sql2 = "INSERT INTO notabelidetil(nonota, kodebarang, harga, jumlah) VALUES ('" + nota.NoNota + "','" + detilNota.Barang.KodeBarang + "','" + detilNota.Harga + "','" + detilNota.Jumlah + "')";
+                try
+                {
+                    string sql1 = "INSERT INTO notabeli(nonota, tanggal, kodesupplier, kodepegawai) VALUES ('" + nota.NoNota + "','" + nota.Tanggal.ToString("yyyy-MM-dd hh:mm:ss") + "','" + nota.Supplier.KodeSupplier + "','" + nota.Pegawai.KodePegawai + "')";
 
-                Koneksi.JalankanPerintahDML(sql2);
+                    Koneksi.JalankanPerintahDML(sql1);
 
-                // Update stok barang dibeli
-                Barang.UpdateStok("pembelian", detilNota.Barang.KodeBarang, detilNota.Jumlah);
+                    // Mendapatkan semua detil barang yang ada di nota beli
+                    foreach (NotaBeliDetil detilNota in nota.ListNotaBeliDetil)
+                    {
+                        string sql2 = "INSERT INTO notabelidetil(nonota, kodebarang, harga, jumlah) VALUES ('" + nota.NoNota + "','" + detilNota.Barang.KodeBarang + "','" + detilNota.Harga + "','" + detilNota.Jumlah + "')";
+
+                        Koneksi.JalankanPerintahDML(sql2);
+
+                        // Update stok barang dibeli
+                        Barang.UpdateStok("pembelian", detilNota.Barang.KodeBarang, detilNota.Jumlah);
+                    }
+                    // Commit setelah semua perintah sql berhasil
+                    tScope.Complete();
+                }
+                catch (Exception e)
+                {
+                    tScope.Dispose();
+
+                    throw (new Exception("Penyimpanan transaksi pembelian gagal. Pesan kesalahan: " + e.Message));
+                }
             }
         }
 

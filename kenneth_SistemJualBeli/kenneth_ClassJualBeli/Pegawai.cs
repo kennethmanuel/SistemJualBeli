@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using MySql.Data.MySqlClient;
+using System.Transactions;
 
 namespace kenneth_ClassJualBeli
 {
@@ -46,29 +47,74 @@ namespace kenneth_ClassJualBeli
         #region methods
         public static void TambahData(Pegawai p)
         {
-            string sql = "INSERT INTO pegawai(kodepegawai, nama, tgllahir, alamat, gaji, username, password, idjabatan) VALUES('" + p.KodePegawai + "', '" + p.Nama + "', '" + p.TanggalLahir.ToString("yyyy-MM-dd") + "', '" + p.Alamat + "', '" + p.Gaji + "', '" + p.Username + "', '" + p.Password + "','" + p.Jabatan.IdJabatan + "')";
+            using (TransactionScope tScope = new TransactionScope())
+            {
+                try
+                {
+                    string sql = "INSERT INTO pegawai(kodepegawai, nama, tgllahir, alamat, gaji, username, password, idjabatan) VALUES('" + p.KodePegawai + "', '" + p.Nama + "', '" + p.TanggalLahir.ToString("yyyy-MM-dd") + "', '" + p.Alamat + "', '" + p.Gaji + "', '" + p.Username + "', '" + p.Password + "','" + p.Jabatan.IdJabatan + "')";
 
-            Koneksi.JalankanPerintahDML(sql);
-            ManajemenUser(p);
+                    Koneksi.JalankanPerintahDML(sql);
+                    ManajemenUser(p);
+
+                    tScope.Complete();
+                }
+                catch (Exception e)
+                {
+                    tScope.Dispose();
+
+                    throw (new Exception("Penambahan data pegawai gagal. Pesan kesalahan" + e.Message));
+
+                }
+            }
         }
 
         public static void UbahData(Pegawai p)
         {
-            string sql = "UPDATE pegawai SET nama='" + p.Nama.Replace("'", "\\'") + "', tgllahir='" + p.TanggalLahir.ToString("yyyy-MM-dd") + "', alamat='" + p.Alamat + "', gaji='" + p.Gaji + "', username='" + p.Username + "', password='" + p.Password + "' WHERE KodePegawai='" + p.KodePegawai + "'";
+            using (TransactionScope tScope = new TransactionScope())
+            {
+                try
+                {
+                    string sql = "UPDATE pegawai SET nama='" + p.Nama.Replace("'", "\\'") + "', tgllahir='" + p.TanggalLahir.ToString("yyyy-MM-dd") + "', alamat='" + p.Alamat + "', gaji='" + p.Gaji + "', username='" + p.Username + "', password='" + p.Password + "' WHERE KodePegawai='" + p.KodePegawai + "'";
 
-            Koneksi.JalankanPerintahDML(sql);
+                    Koneksi.JalankanPerintahDML(sql);
 
-            string serverName = Koneksi.GetNamaServer();
-            UbahPasswordUser(p, serverName);
+                    string serverName = Koneksi.GetNamaServer();
+                    UbahPasswordUser(p, serverName);
+
+                    tScope.Complete();
+                        
+                }
+                catch (Exception e)
+                {
+                    tScope.Dispose();
+
+                    throw (new Exception("Ubah data pegawai gagal. Pesan kesalahan: " + e.Message));
+                    
+                }
+            }
         }
 
         public static void HapusData(Pegawai p)
         {
-            string sql = "DELETE FROM pegawai WHERE kodepegawai='" + p.KodePegawai + "'";
+            using (TransactionScope tScope = new TransactionScope())
+            {
+                try
+                {
+                    string sql = "DELETE FROM pegawai WHERE kodepegawai='" + p.KodePegawai + "'";
 
-            Koneksi.JalankanPerintahDML(sql);
-            string serverName = Koneksi.GetNamaServer();
-            HapusUser(p, serverName);
+                    Koneksi.JalankanPerintahDML(sql);
+                    string serverName = Koneksi.GetNamaServer();
+                    HapusUser(p, serverName);
+
+                    tScope.Complete();
+                }
+                catch (Exception e)
+                {
+                    tScope.Dispose();
+
+                    throw (new Exception("Penghapusan data pegawai gagal. Pesan kesalahan: " + e.Message));
+                }
+            }
         }
 
         public static List<Pegawai> BacaData(string kriteria, string nilaiKriteria)
@@ -139,11 +185,26 @@ namespace kenneth_ClassJualBeli
 
         public static void ManajemenUser(Pegawai p)
         {
-            string namaServer = Koneksi.GetNamaServer();
-            string namaDatabase = Koneksi.GetNamaDatabase();
+            using (TransactionScope tScope = new TransactionScope())
+            {
+                try
+                {
+                    string namaServer = Koneksi.GetNamaServer();
+                    string namaDatabase = Koneksi.GetNamaDatabase();
 
-            Pegawai.BuatUserBaru(p, namaServer);
-            Pegawai.BeriHakAkses(p, namaServer, namaDatabase);
+                    Pegawai.BuatUserBaru(p, namaServer);
+                    Pegawai.BeriHakAkses(p, namaServer, namaDatabase);
+
+                    tScope.Complete();
+                }
+                catch (Exception e)
+                {
+                    tScope.Dispose();
+
+                    throw (new Exception("Manajemen user gagal. Pesan kesalahann: " + e.Message));
+                }
+
+            }
         }
 
         public static void UbahPasswordUser(Pegawai pPegawai, string pNamaServer)

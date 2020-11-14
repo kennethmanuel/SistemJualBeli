@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Transactions;
 
 namespace kenneth_ClassJualBeli
 {
@@ -46,20 +47,38 @@ namespace kenneth_ClassJualBeli
         // Menambah nota jual baru
         public static void TambahData(NotaJual nota)
         {
-            // INSERT ke tabel nota jual
-            string sql1 = "INSERT INTO notajual(nonota, tanggal, kodepelanggan, kodepegawai) VALUES ('" + nota.NoNota + "','" + nota.Tanggal.ToString("yyyy-MM-dd hh:mm:ss") + "','" + nota.Pelanggan.KodePelanggan + "','" + nota.Pegawai.KodePegawai + "')";
-            Koneksi.JalankanPerintahDML(sql1);
-
-            // Mendapatkan semua detil barang yang ada di nota jual teserbut
-            foreach(NotaJualDetil detilNota in nota.ListNotaJualDetil)
+            using (TransactionScope tScope = new TransactionScope())
             {
-                // Insert ke tabel notajualdetil
-                string sql2 = "INSERT INTO notajualdetil(nonota, kodebarang, harga, jumlah) VALUES ('" + nota.noNota + "','" + detilNota.Barang.KodeBarang + "','" + detilNota.Harga + "','" + detilNota.Jumlah + "')";
-                Koneksi.JalankanPerintahDML(sql2);
+                try
+                {
+                    // INSERT ke tabel nota jual
+                    string sql1 = "INSERT INTO notajual(nonota, tanggal, kodepelanggan, kodepegawai) VALUES ('" + nota.NoNota + "','" + nota.Tanggal.ToString("yyyy-MM-dd hh:mm:ss") + "','" + nota.Pelanggan.KodePelanggan + "','" + nota.Pegawai.KodePegawai + "')";
+                    Koneksi.JalankanPerintahDML(sql1);
 
-                // Update stok barang yang terjual
-                Barang.UpdateStok("penjualan", detilNota.Barang.KodeBarang, detilNota.Jumlah);
+                    // Mendapatkan semua detil barang yang ada di nota jual teserbut
+                    foreach(NotaJualDetil detilNota in nota.ListNotaJualDetil)
+                    {
+                        // Insert ke tabel notajualdetil
+                        string sql2 = "INSERT INTO notajualdetil(nonota, kodebarang, harga, jumlah) VALUES ('" + nota.noNota + "','" + detilNota.Barang.KodeBarang + "','" + detilNota.Harga + "','" + detilNota.Jumlah + "')";
+                        Koneksi.JalankanPerintahDML(sql2);
+
+                        // Update stok barang yang terjual
+                        Barang.UpdateStok("penjualan", detilNota.Barang.KodeBarang, detilNota.Jumlah);
+                    }
+                    // Commit jika semua berhasil
+                    tScope.Complete();
+
+                }
+                catch (Exception e)
+                {
+                    // Batalkan semua perintah yang ada dalam transaction scope tScope
+                    tScope.Dispose();
+
+                    throw (new Exception("Penyimpanan transaksi penjualan gagal. Pesan kesalahan: " + e.Message));
+                }
+
             }
+
         }
 
         // Generate nomor nota

@@ -22,7 +22,7 @@ namespace kenneth_ClassJualBeli
             this.Tanggal = tanggal;
             this.Pelanggan = pelanggan;
             this.Pegawai = pegawai;
-            this.ListNotaJualDetil = listNotaJualDetil;
+            this.ListNotaJualDetil = new List<NotaJualDetil>();
         }
         #endregion
 
@@ -41,7 +41,7 @@ namespace kenneth_ClassJualBeli
         {
             NotaJualDetil notaJualDetil = new NotaJualDetil(harga, jumlah, barang);
 
-            listNotaJualDetil.Add(notaJualDetil);
+            ListNotaJualDetil.Add(notaJualDetil);
         }
 
         // Menambah nota jual baru
@@ -52,14 +52,20 @@ namespace kenneth_ClassJualBeli
                 try
                 {
                     // INSERT ke tabel nota jual
-                    string sql1 = "INSERT INTO notajual(nonota, tanggal, kodepelanggan, kodepegawai) VALUES ('" + nota.NoNota + "','" + nota.Tanggal.ToString("yyyy-MM-dd hh:mm:ss") + "','" + nota.Pelanggan.KodePelanggan + "','" + nota.Pegawai.KodePegawai + "')";
+                    string sql1 = 
+                        "INSERT INTO notajual(nonota, tanggal, kodepelanggan, kodepegawai) " +
+                        "VALUES ('" + nota.NoNota + "','" + nota.Tanggal.ToString("yyyy-MM-dd hh:mm:ss") + "','" + nota.Pelanggan.KodePelanggan + "','" + nota.Pegawai.KodePegawai + "')";
+
                     Koneksi.JalankanPerintahDML(sql1);
 
                     // Mendapatkan semua detil barang yang ada di nota jual teserbut
                     foreach(NotaJualDetil detilNota in nota.ListNotaJualDetil)
                     {
                         // Insert ke tabel notajualdetil
-                        string sql2 = "INSERT INTO notajualdetil(nonota, kodebarang, harga, jumlah) VALUES ('" + nota.noNota + "','" + detilNota.Barang.KodeBarang + "','" + detilNota.Harga + "','" + detilNota.Jumlah + "')";
+                        string sql2 =
+                            "INSERT INTO notajualdetil(nonota, kodebarang, harga, jumlah)" +
+                            " VALUES ('" + nota.noNota + "','" + detilNota.Barang.KodeBarang + "','" + detilNota.Harga + "','" + detilNota.Jumlah + "')";
+
                         Koneksi.JalankanPerintahDML(sql2);
 
                         // Update stok barang yang terjual
@@ -111,6 +117,89 @@ namespace kenneth_ClassJualBeli
             }
             return hasilNoNota;
         } 
+
+        public static List<NotaJual> BacaData(string kriteria, string nilaiKriteria)
+        {
+            // sql1: menampilkan semua data di tabel NotaJual
+            string sql1 = "";
+            if (kriteria == "")
+            {
+                sql1 =
+                    "SELECT n.nonota, n.tanggal, n.kodepelanggan, plg.nama AS NamaPelanggan, plg.alamat AS AlamatPelanggan, n.kodepegawai, peg.nama AS NamaPegawai " +
+                    "FROM notajual n " +
+                    "INNER JOIN pelanggan plg ON n.kodepelanggan = plg.kodepelanggan " +
+                    "INNER JOIN pegawai peg ON n.kodepegawai = peg.kodepegawai " + 
+                    "ORDER BY n.nonota DESC";  
+
+            }
+            else
+            {
+                sql1 =
+                    "SELECT n.nonota, n.tanggal, n.kodepelanggan, plg.nama AS namapelanggan, plg.alamat AS alamat pelanggan, n.kodepegawai, peg.nama AS namapegawai " +
+                    "FROM notajual n " +
+                    "INNER JOIN pelanggan plg ON n.kodepelanggan = plg.kodepelanggan " +
+                    "INNER JOIN pegawai peg ON n.kodepegawai = peg.kodepegawai " +
+                    "WHERE " + kriteria + " LIKE '%" + nilaiKriteria + "%' " +
+                    "ORDER BY n.nonota DESC";
+
+            }
+            // Data reader 1 : memperoleh semua data di tabel NotaJual
+            MySqlDataReader hasilData1 = Koneksi.JalankanPerintahQuery(sql1);
+            List<NotaJual> listHasildata = new List<NotaJual>();
+
+            while (hasilData1.Read() == true)
+            {
+                // Mendapatkan nomor nota jual dari hasil data reader
+                string nomorNota = hasilData1.GetValue(0).ToString();
+
+                // Mendapatkan tanggal nota dari hasil data reader
+                DateTime tglNota = DateTime.Parse(hasilData1.GetValue(1).ToString());
+
+                // PELANGGAN yang melakukan transaksi (cari data di table pelanggan sesuai kode pelanggan yang dihasilkan)
+                List<Pelanggan> listPelanggan = Pelanggan.BacaData("KodePelanggan", hasilData1.GetValue(2).ToString());
+
+                // PEGAWAI PEMBUAT NOTA (cari data di tabel pegawai sesuai kode pegawai yang dihasilkan)
+                List<Pegawai> listPegawai = Pegawai.BacaData("P.KodePegawai", hasilData1.GetValue(5).ToString());
+
+                // NOTA JUAL
+                // Create objek bertipe NotaJual
+                NotaJual nota = new NotaJual(nomorNota, tglNota, listPelanggan[0], listPegawai[0]);
+
+                // Query 2: mendapatkan detil nota jual dari tiap nota jual
+                // sql2: mendapatkan barang yang ada di nota (dari tabel NotaJualDetil)
+                string sql2 =
+                    "SELECT njd.kodebarang, b.nama, njd.harga, njd.jumlah " +
+                    "FROM notajual n " +
+                    "INNER JOIN notajualdetil njd ON n.nonota = njd.nonota " +
+                    "INNER JOIN barang b ON njd.kodebarang = b.kodebarang " +
+                    "WHERE n.nonota = '" + nomorNota + "'";
+
+                // Data reader 2: memperoleh semua data barang nota di tabel NotaJualDetil
+                MySqlDataReader hasilData2 = Koneksi.JalankanPerintahQuery(sql2);
+
+                while(hasilData2.Read() == true)
+                {
+                    // Barang yang terjual
+                    List<Barang> listBarang = Barang.BacaData("B.KodeBarang", hasilData2.GetValue(0).ToString());
+
+                    // Mendapatkan harga jual transaksi
+                    int hrgJual = int.Parse(hasilData2.GetValue(2).ToString());
+
+                    // Mendapatkan jumlah barang terjual
+                    int jumJual = int.Parse(hasilData2.GetValue(3).ToString());
+
+                    // Create objek DetilNotaJual
+                    NotaJualDetil detilNota = new NotaJualDetil(hrgJual, jumJual, listBarang[0]);
+
+                    // Simpan detil barang ke nota
+                    nota.TambahNotaJualDetil(hrgJual, jumJual, listBarang[0]);
+                }
+                // Simpan ke list
+                listHasildata.Add(nota);
+            }
+            return listHasildata;
+
+        }
         #endregion 
     }
 }

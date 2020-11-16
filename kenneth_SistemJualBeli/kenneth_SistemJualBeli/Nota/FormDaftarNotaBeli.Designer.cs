@@ -37,9 +37,9 @@
             this.buttonHapus = new System.Windows.Forms.Button();
             this.buttonUbah = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewNota = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNota)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -146,15 +146,15 @@
             this.buttonTambah.UseVisualStyleBackColor = false;
             this.buttonTambah.Click += new System.EventHandler(this.buttonTambah_Click);
             // 
-            // dataGridView1
+            // dataGridViewNota
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 201);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(860, 239);
-            this.dataGridView1.TabIndex = 16;
+            this.dataGridViewNota.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewNota.Location = new System.Drawing.Point(18, 201);
+            this.dataGridViewNota.Name = "dataGridViewNota";
+            this.dataGridViewNota.RowHeadersWidth = 51;
+            this.dataGridViewNota.RowTemplate.Height = 24;
+            this.dataGridViewNota.Size = new System.Drawing.Size(860, 239);
+            this.dataGridViewNota.TabIndex = 16;
             // 
             // FormDaftarNotaBeli
             // 
@@ -168,12 +168,13 @@
             this.Controls.Add(this.buttonHapus);
             this.Controls.Add(this.buttonUbah);
             this.Controls.Add(this.buttonTambah);
-            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.dataGridViewNota);
             this.Name = "FormDaftarNotaBeli";
             this.Text = "FormDaftarNotaBeli";
+            this.Load += new System.EventHandler(this.FormDaftarNotaBeli_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNota)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -189,6 +190,6 @@
         private System.Windows.Forms.Button buttonHapus;
         private System.Windows.Forms.Button buttonUbah;
         private System.Windows.Forms.Button buttonTambah;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewNota;
     }
 }

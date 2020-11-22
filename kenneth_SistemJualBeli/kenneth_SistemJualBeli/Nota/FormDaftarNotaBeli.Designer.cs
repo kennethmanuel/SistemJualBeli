@@ -38,6 +38,7 @@
             this.buttonUbah = new System.Windows.Forms.Button();
             this.buttonTambah = new System.Windows.Forms.Button();
             this.dataGridViewNota = new System.Windows.Forms.DataGridView();
+            this.buttonCetak = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewNota)).BeginInit();
             this.SuspendLayout();
@@ -114,7 +115,7 @@
             this.buttonHapus.BackColor = System.Drawing.Color.Navy;
             this.buttonHapus.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonHapus.ForeColor = System.Drawing.Color.White;
-            this.buttonHapus.Location = new System.Drawing.Point(502, 446);
+            this.buttonHapus.Location = new System.Drawing.Point(441, 447);
             this.buttonHapus.Name = "buttonHapus";
             this.buttonHapus.Size = new System.Drawing.Size(133, 55);
             this.buttonHapus.TabIndex = 19;
@@ -126,7 +127,7 @@
             this.buttonUbah.BackColor = System.Drawing.Color.Navy;
             this.buttonUbah.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonUbah.ForeColor = System.Drawing.Color.White;
-            this.buttonUbah.Location = new System.Drawing.Point(363, 446);
+            this.buttonUbah.Location = new System.Drawing.Point(302, 447);
             this.buttonUbah.Name = "buttonUbah";
             this.buttonUbah.Size = new System.Drawing.Size(133, 55);
             this.buttonUbah.TabIndex = 18;
@@ -138,7 +139,7 @@
             this.buttonTambah.BackColor = System.Drawing.Color.Navy;
             this.buttonTambah.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonTambah.ForeColor = System.Drawing.Color.White;
-            this.buttonTambah.Location = new System.Drawing.Point(224, 446);
+            this.buttonTambah.Location = new System.Drawing.Point(163, 447);
             this.buttonTambah.Name = "buttonTambah";
             this.buttonTambah.Size = new System.Drawing.Size(133, 55);
             this.buttonTambah.TabIndex = 17;
@@ -156,12 +157,26 @@
             this.dataGridViewNota.Size = new System.Drawing.Size(860, 239);
             this.dataGridViewNota.TabIndex = 16;
             // 
+            // buttonCetak
+            // 
+            this.buttonCetak.BackColor = System.Drawing.Color.Navy;
+            this.buttonCetak.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonCetak.ForeColor = System.Drawing.Color.White;
+            this.buttonCetak.Location = new System.Drawing.Point(580, 447);
+            this.buttonCetak.Name = "buttonCetak";
+            this.buttonCetak.Size = new System.Drawing.Size(133, 55);
+            this.buttonCetak.TabIndex = 45;
+            this.buttonCetak.Text = "CETAK";
+            this.buttonCetak.UseVisualStyleBackColor = false;
+            this.buttonCetak.Click += new System.EventHandler(this.buttonCetak_Click);
+            // 
             // FormDaftarNotaBeli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(890, 512);
+            this.Controls.Add(this.buttonCetak);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.buttonKeluar);
@@ -191,5 +206,6 @@
         private System.Windows.Forms.Button buttonUbah;
         private System.Windows.Forms.Button buttonTambah;
         private System.Windows.Forms.DataGridView dataGridViewNota;
+        private System.Windows.Forms.Button buttonCetak;
     }
 }

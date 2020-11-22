@@ -15,6 +15,8 @@ namespace kenneth_SistemJualBeli
     {
         List<NotaJual> listNotaJual = new List<NotaJual>();
 
+        string kriteria = "";
+
         public FormDaftarNotaJual()
         {
             InitializeComponent();
@@ -115,6 +117,12 @@ namespace kenneth_SistemJualBeli
             listNotaJual = NotaJual.BacaData("", "");
 
             TampilDataGrid();
+        }
+
+        private void buttonCetak_Click(object sender, EventArgs e)
+        {
+            NotaJual.CetakNota(kriteria, textBoxCari.Text, "daftar_nota_jual.txt", new Font("Courier New", 12));
+
         }
     }
 }

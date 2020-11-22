@@ -4,6 +4,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Transactions;
+using System.IO;
+using System.Drawing;
 
 namespace kenneth_ClassJualBeli
 {
@@ -198,6 +200,69 @@ namespace kenneth_ClassJualBeli
                 listHasildata.Add(nota);
             }
             return listHasildata;
+
+        }
+
+        public static void CetakNota(string Kriteria, string NilaiKriteria, string NamaFile, Font Font)
+        {
+            List<NotaJual> listNotaJual = new List<NotaJual>();
+
+            // Baca data nota yang akan dicetak
+            listNotaJual = NotaJual.BacaData(Kriteria, NilaiKriteria);
+
+            // Simpan isi nota yang akan ditampilkan ke objek StreamWriter
+            StreamWriter file = new StreamWriter(NamaFile);
+
+            foreach (NotaJual nota in listNotaJual)
+            {
+                // Info perusahaan
+                file.WriteLine("");
+                file.WriteLine("TOKO MAJU MAKMUR UNTUNG SELALU");
+                file.WriteLine("Jl. Raya Kallirungkut Surabaya");
+                file.WriteLine("telp. (031) - 12345678");
+                file.WriteLine("=".PadRight(50,'='));
+
+                // Tampilkan header nota
+                file.WriteLine("No.Nota: " + nota.NoNota);
+                file.WriteLine("Tanggal: " + nota.Tanggal);
+                file.WriteLine("");
+                file.WriteLine("Pelanggan: " + nota.Pelanggan.Nama);
+                file.WriteLine("Alamat   : " + nota.Pelanggan.Alamat);
+                file.WriteLine("");
+                file.WriteLine("Kasir    : " + nota.Pegawai.Nama);
+                file.WriteLine("=".PadRight(50, '='));
+
+                int grandTotal = 0;
+                //Tampilkan barang yang terjual
+                foreach (NotaJualDetil njd in nota.ListNotaJualDetil)
+                {
+                    string nama = njd.Barang.Nama;
+                    // Jika nama terlalu panjang tampilkan 30 karakter
+                    if(nama.Length > 30)
+                    {
+                        nama = nama.Substring(0, 30);
+                    }
+
+                    int jumlah = njd.Jumlah;
+                    int harga = njd.Harga;
+                    int subTotal = jumlah * harga;
+                    file.Write(nama.PadRight(30, ' '));
+                    file.Write(jumlah.ToString().PadRight(3, ' '));
+                    file.Write(harga.ToString("#,###").PadRight(7, ' '));
+                    file.Write(subTotal.ToString("#,###").PadRight(10, ' '));
+                    file.WriteLine("");
+                    grandTotal += subTotal;
+                }
+                file.WriteLine("=".PadRight(50,'='));
+                file.WriteLine("TOTAL: " + grandTotal.ToString("#,###"));
+                file.WriteLine("=".PadRight(50,'='));
+                file.WriteLine("Terima kasih atas kunjungan Anda");
+                file.WriteLine("");
+            }
+            file.Close();
+            // Cetak ke printer
+            Cetak c = new Cetak(NamaFile, Font, 20, 10, 10, 10);
+            c.CetakKePrinter("text");
 
         }
         #endregion 

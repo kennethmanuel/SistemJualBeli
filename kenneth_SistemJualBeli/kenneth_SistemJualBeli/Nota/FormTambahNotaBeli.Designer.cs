@@ -353,6 +353,7 @@
             this.buttonCetak.TabIndex = 44;
             this.buttonCetak.Text = "CETAK";
             this.buttonCetak.UseVisualStyleBackColor = false;
+            this.buttonCetak.Click += new System.EventHandler(this.buttonCetak_Click);
             // 
             // label1
             // 

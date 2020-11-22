@@ -16,6 +16,8 @@ namespace kenneth_SistemJualBeli
     {
         List<NotaBeli> listNotaBeli = new List<NotaBeli>();
 
+        string kriteria = "";
+
         public FormDaftarNotaBeli()
         {
             InitializeComponent();
@@ -71,7 +73,7 @@ namespace kenneth_SistemJualBeli
             // Harga ditampilkan dengan format pemisah ribuan (1000 delimiter)
             dataGridViewNota.Columns["Harga"].DefaultCellStyle.Format = "#,###";
 
-            // Datagridview tidak bisa diganti user
+            // DatagridvJualiew tidak bisa diganti user
             dataGridViewNota.AllowUserToAddRows = false;
             dataGridViewNota.ReadOnly = true;
         }
@@ -116,6 +118,13 @@ namespace kenneth_SistemJualBeli
             listNotaBeli = NotaBeli.BacaData("", "");
 
             TampilDataGrid();
+
+        }
+
+        private void buttonCetak_Click(object sender, EventArgs e)
+        {
+            NotaBeli.CetakNota(kriteria, textBoxCari.Text, "daftar_nota_beli.txt", new Font("Courier New", 12));
+
 
         }
     }

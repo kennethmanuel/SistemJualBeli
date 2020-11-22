@@ -184,5 +184,20 @@ namespace kenneth_SistemJualBeli.Nota
                 MessageBox.Show("Terjadi kesalahan. Pesan kesalahan: " + ex.Message);
             }
         }
+
+        private void buttonCetak_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NotaBeli.CetakNota("NoNota", textBoxNoNota.Text, "nota_beli.txt", new Font("Courier New", 12));
+
+                MessageBox.Show("Nota beli telah tercetak");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Nota beli gagal dicetak. Pesan kesalahan: " + ex.Message);
+
+            }
+        }
     }
 }
